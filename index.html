@@ -518,7 +518,7 @@ div.panel.show {
 				<div class="col-lg-12">
 					
 
-						Selecciona el Tipo de usuario
+						<h1>Selecciona el Tipo de usuario</h1>
 						<br>
 						<button class="accordion">Alumno</button>
 				<div class="panel">
@@ -564,7 +564,7 @@ div.panel.show {
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/phone.png" alt="">TELÉFONO</label>
-								<input type="text" placeholder="Ingresa tu número" required>
+								<input type="text" placeholder="Ingresa tu número"  onkeypress="return valida(event)" required>
 							</div>
 						</li>
 						<li>
@@ -610,14 +610,196 @@ div.panel.show {
 						</form>
 								</div>
 
-								<button class="accordion">Maestro</button>
+			<button class="accordion">Maestro</button>
 								<div class="panel">
- 								 <p>Lorem ipsum...</p>
+ 								 		<form>
+					<ul class="clearfix">
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="" >NOMBRE</label>
+								<input type="text" placeholder="Nombre" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">APELLIDO PATERNO</label>
+								<input type="text" placeholder="Apellido Paterno" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">APELLIDO MATERNO</label>
+								<input type="text" placeholder="Apellido Materno" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">EDAD</label>
+								<input type="Number" placeholder="Edad" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/email.png" alt="">CODIGO POSTAL</label>
+								<input type="text" placeholder="Código Postal" onkeypress="return valida(event)" size="5" maxlength="5" minlength="5" required>
+							
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/email.png" alt="">EMAIL</label>
+								<input type="text" placeholder="Ingresa tu email" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/phone.png" alt="">TELÉFONO</label>
+								<input type="text" placeholder="Ingresa tu número"  onkeypress="return valida(event)" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/phone.png" alt="">TELÉFONO CELULAR</label>
+								<input type="text" placeholder="Ingresa tu número celular" onkeypress="return valida(event)" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">NÚMERO DE EMPLEADO</label>
+								<input type="text" placeholder="Ingresa tu número de empleado" onkeypress="return valida(event)" required><BR><BR>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">ESCUELA</label>
+								<input type="text" placeholder="Ingresa tu escuela" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">Especialidad</label>
+								<input type="text" placeholder="Especialidad" required>
+							</div>
+						</li>
+						<li>
+							
+								<label><img src="img/icons/name.png" alt="">SELECCIONA TUS INTERESES</label>
+								<label><input type="checkbox" value="">Option 1</label>
+								<label><input type="checkbox" value="">Option 2</label>
+								<label><input type="checkbox" value="">Option 3</label>								
+							
+						</li>
+
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/password.png" alt="">CONTRASEÑA</label>
+								<input type="text" placeholder="PASSWORD" required><BR><BR> 
+							</div>
+						</li>
+
+						<li>
+							<div class="input-wrap">
+								<button type="submit" class="hvr-bounce-to-right">REGISTRAR</button>
+							</div>
+						</li>
+						</ul>
+						</form>
 								</div>
 
-								<button class="accordion">Section 3</button>
+				<button class="accordion">Competidor</button>
 								<div class="panel">
- 								 <p>Lorem ipsum...</p>
+ 								 <form>
+					<ul class="clearfix">
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="" >NOMBRE</label>
+								<input type="text" placeholder="Nombre" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">APELLIDO PATERNO</label>
+								<input type="text" placeholder="Apellido Paterno" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">APELLIDO MATERNO</label>
+								<input type="text" placeholder="Apellido Materno" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">EDAD</label>
+								<input type="Number" placeholder="Edad" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/email.png" alt="">CODIGO POSTAL</label>
+								<input type="text" placeholder="Código Postal" onkeypress="return valida(event)" size="5" maxlength="5" minlength="5" required>
+							
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/email.png" alt="">EMAIL</label>
+								<input type="text" placeholder="Ingresa tu email" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/phone.png" alt="">TELÉFONO</label>
+								<input type="text" placeholder="Ingresa tu número"  onkeypress="return valida(event)" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/phone.png" alt="">TELÉFONO CELULAR</label>
+								<input type="text" placeholder="Ingresa tu número celular" onkeypress="return valida(event)" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">RFC</label>
+								<input type="text" placeholder="Ingresa tu número de empleado" onkeypress="return valida(event)" required><BR><BR>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">EMPRESA</label>
+								<input type="text" placeholder="Ingresa tu empresa" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">ESPECIALIDAD</label>
+								<input type="text" placeholder="Especialidad" required>
+							</div>
+						</li>
+						<li>
+							
+								<label><img src="img/icons/name.png" alt="">SELECCIONA TUS INTERESES</label>
+								<label><input type="checkbox" value="">Option 1</label>
+								<label><input type="checkbox" value="">Option 2</label>
+								<label><input type="checkbox" value="">Option 3</label>								
+							
+						</li>
+
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/password.png" alt="">CONTRASEÑA</label>
+								<input type="text" placeholder="PASSWORD" required><BR><BR> 
+							</div>
+						</li>
+
+						<li>
+							<div class="input-wrap">
+								<button type="submit" class="hvr-bounce-to-right">REGISTRAR</button>
+							</div>
+						</li>
+						</ul>
+						</form>
 								</div>
 						
 					
