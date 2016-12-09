@@ -13,7 +13,53 @@
 	<link rel="stylesheet" href="css/style.css">
 	<!-- responsive stylesheet -->
 	<link rel="stylesheet" href="css/responsive.css">
+	<script type="text/javascript">
+	function valida(e){
+    tecla = (document.all) ? e.keyCode : e.which;
 
+    //Tecla de retroceso para borrar, siempre la permite
+    if (tecla==8){
+        return true;
+    }
+        
+    // Patron de entrada, en este caso solo acepta numeros
+    patron =/[0-9]/;
+    tecla_final = String.fromCharCode(tecla);
+    return patron.test(tecla_final);
+}
+</script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd; 
+}
+
+div.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+}
+
+div.panel.show {
+    display: block;
+}
+</style>
 </head>
 <body>
 	
@@ -470,39 +516,118 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
+					
+
+						Selecciona el Tipo de usuario
+						<br>
+						<button class="accordion">Alumno</button>
+				<div class="panel">
+  				<form>
 					<ul class="clearfix">
 						<li>
 							<div class="input-wrap">
-								<label><img src="img/icons/name.png" alt="">NOMBRE</label>
-								<input type="text" placeholder="Full Name">
+								<label><img src="img/icons/name.png" alt="" >NOMBRE</label>
+								<input type="text" placeholder="Nombre" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">APELLIDO PATERNO</label>
+								<input type="text" placeholder="Apellido Paterno" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">APELLIDO MATERNO</label>
+								<input type="text" placeholder="Apellido Materno" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">EDAD</label>
+								<input type="Number" placeholder="Edad" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/email.png" alt="">CODIGO POSTAL</label>
+								<input type="text" placeholder="Código Postal" onkeypress="return valida(event)" size="5" maxlength="5" minlength="5" required>
+							
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/email.png" alt="">EMAIL</label>
-								<input type="text" placeholder="Enter your email">
+								<input type="text" placeholder="Ingresa tu email" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/phone.png" alt="">TELÉFONO</label>
-								<input type="text" placeholder="Enter Phone Number">
+								<input type="text" placeholder="Ingresa tu número" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
-								<label><img src="img/icons/password.png" alt="">CONTRASEÑA</label>
-								<input type="text" placeholder="PASSWORD">
+								<label><img src="img/icons/phone.png" alt="">TELÉFONO CELULAR</label>
+								<input type="text" placeholder="Ingresa tu número celular" onkeypress="return valida(event)" required>
 							</div>
 						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">BOLETA</label>
+								<input type="text" placeholder="Ingresa tu boleta" onkeypress="return valida(event)" required><BR><BR>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">ESCUELA</label>
+								<input type="text" placeholder="Ingresa tu escuela" required>
+							</div>
+						</li>
+						<li>
+							
+								<label><img src="img/icons/name.png" alt="">SELECCIONA TUS INTERESES</label>
+								<label><input type="checkbox" value="">Option 1</label>
+								<label><input type="checkbox" value="">Option 2</label>
+								<label><input type="checkbox" value="">Option 3</label>								
+							
+						</li>
+
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/password.png" alt="">CONTRASEÑA</label>
+								<input type="text" placeholder="PASSWORD" required><BR><BR> 
+							</div>
+						</li>
+
 						<li>
 							<div class="input-wrap">
 								<button type="submit" class="hvr-bounce-to-right">REGISTRAR</button>
 							</div>
 						</li>
-					</ul>
+						</ul>
+						</form>
+								</div>
+
+								<button class="accordion">Maestro</button>
+								<div class="panel">
+ 								 <p>Lorem ipsum...</p>
+								</div>
+
+								<button class="accordion">Section 3</button>
+								<div class="panel">
+ 								 <p>Lorem ipsum...</p>
+								</div>
+						
+					
+
+						
+					
 				</div>
+
 			</div>
+
 		</div>
 	</section>
 	<!-- /#register-now -->
@@ -972,16 +1097,16 @@
 	<script src="js/custom.js"></script>
 
 <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var $_Tawk_API={},$_Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/569cfc09aeafd72017dd6ea9/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+  }
+}
 </script>
 <!--End of Tawk.to Script-->
 
