@@ -522,73 +522,79 @@ div.panel.show {
 						<br>
 						<button class="accordion">Alumno</button>
 				<div class="panel">
-  				<form>
+  				<form action="altaalumno.php" method="post">
 					<ul class="clearfix">
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/name.png" alt="" >NOMBRE</label>
-								<input type="text" placeholder="Nombre" required>
+								<input type="text" name="nombrea" placeholder="Nombre" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/name.png" alt="">APELLIDO PATERNO</label>
-								<input type="text" placeholder="Apellido Paterno" required>
+								<input type="text" name="apa" placeholder="Apellido Paterno" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/name.png" alt="">APELLIDO MATERNO</label>
-								<input type="text" placeholder="Apellido Materno" required>
+								<input type="text" name="ama" placeholder="Apellido Materno" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/name.png" alt="">EDAD</label>
-								<input type="Number" placeholder="Edad" required>
+								<input type="Number" name="edada" placeholder="Edad" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/email.png" alt="">CODIGO POSTAL</label>
-								<input type="text" placeholder="Código Postal" onkeypress="return valida(event)" size="5" maxlength="5" minlength="5" required>
+								<input type="text" name="cpa" placeholder="Código Postal" onkeypress="return valida(event)" size="5" maxlength="5" minlength="5" required>
 							
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/email.png" alt="">EMAIL</label>
-								<input type="text" placeholder="Ingresa tu email" required>
+								<input type="text" name="emaila" placeholder="Ingresa tu email" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/phone.png" alt="">TELÉFONO</label>
-								<input type="text" placeholder="Ingresa tu número"  onkeypress="return valida(event)" required>
+								<input type="text"  name="tela" placeholder="Ingresa tu número"  onkeypress="return valida(event)" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/phone.png" alt="">TELÉFONO CELULAR</label>
-								<input type="text" placeholder="Ingresa tu número celular" onkeypress="return valida(event)" required>
+								<input type="text" name="cela" placeholder="Ingresa tu número celular" onkeypress="return valida(event)" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">DIRECCIÓN</label>
+								<input type="text" name="direccion" placeholder="Ingresa tu direccón" required><BR><BR>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/name.png" alt="">BOLETA</label>
-								<input type="text" placeholder="Ingresa tu boleta" onkeypress="return valida(event)" required><BR><BR>
+								<input type="text" name="boleta" placeholder="Ingresa tu boleta" onkeypress="return valida(event)" required><BR><BR>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/name.png" alt="">ESCUELA</label>
-								<input type="text" placeholder="Ingresa tu escuela" required>
+								<input type="text" placeholder="Ingresa tu escuela" name="escuela" required>
 							</div>
 						</li>
 						<li>
 							
 								<label><img src="img/icons/name.png" alt="">SELECCIONA TUS INTERESES</label>
-								<label><input type="checkbox" value="">Option 1</label>
+								<label><input type="checkbox" name="op1" value="rap">Option 1</label>
 								<label><input type="checkbox" value="">Option 2</label>
 								<label><input type="checkbox" value="">Option 3</label>								
 							
@@ -597,7 +603,7 @@ div.panel.show {
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/password.png" alt="">CONTRASEÑA</label>
-								<input type="text" placeholder="PASSWORD" required><BR><BR> 
+								<input type="password" name="password" placeholder="PASSWORD" required><BR><BR> 
 							</div>
 						</li>
 
@@ -612,79 +618,85 @@ div.panel.show {
 
 			<button class="accordion">Maestro</button>
 								<div class="panel">
- 								 		<form>
+ 			<form action="altamaestro.php" method="post">
 					<ul class="clearfix">
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/name.png" alt="" >NOMBRE</label>
-								<input type="text" placeholder="Nombre" required>
+								<input name="nombrem" type="text" placeholder="Nombre" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/name.png" alt="">APELLIDO PATERNO</label>
-								<input type="text" placeholder="Apellido Paterno" required>
+								<input type="text" name="apm" placeholder="Apellido Paterno" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/name.png" alt="">APELLIDO MATERNO</label>
-								<input type="text" placeholder="Apellido Materno" required>
+								<input type="text" name="amm" placeholder="Apellido Materno" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/name.png" alt="">EDAD</label>
-								<input type="Number" placeholder="Edad" required>
+								<input type="Number" name="edadm" placeholder="Edad" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/email.png" alt="">CODIGO POSTAL</label>
-								<input type="text" placeholder="Código Postal" onkeypress="return valida(event)" size="5" maxlength="5" minlength="5" required>
+								<input type="text" name="cpm" placeholder="Código Postal" onkeypress="return valida(event)" size="5" maxlength="5" minlength="5" required>
 							
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/email.png" alt="">EMAIL</label>
-								<input type="text" placeholder="Ingresa tu email" required>
+								<input type="text" name="emailm" placeholder="Ingresa tu email" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">DIRECCIÓN</label>
+								<input type="text" name="direccionm" placeholder="Ingresa tu direccón" required><BR><BR>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/phone.png" alt="">TELÉFONO</label>
-								<input type="text" placeholder="Ingresa tu número"  onkeypress="return valida(event)" required>
+								<input type="text" name="telm" placeholder="Ingresa tu número"  onkeypress="return valida(event)" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/phone.png" alt="">TELÉFONO CELULAR</label>
-								<input type="text" placeholder="Ingresa tu número celular" onkeypress="return valida(event)" required>
+								<input type="text" name="celm" placeholder="Ingresa tu número celular" onkeypress="return valida(event)" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/name.png" alt="">NÚMERO DE EMPLEADO</label>
-								<input type="text" placeholder="Ingresa tu número de empleado" onkeypress="return valida(event)" required><BR><BR>
+								<input type="text" name="numempleado" placeholder="Ingresa tu número de empleado" onkeypress="return valida(event)" required><BR><BR>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/name.png" alt="">ESCUELA</label>
-								<input type="text" placeholder="Ingresa tu escuela" required>
+								<input type="text" name="escuelam" placeholder="Ingresa tu escuela" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
-								<label><img src="img/icons/name.png" alt="">Especialidad</label>
-								<input type="text" placeholder="Especialidad" required>
+								<label><img src="img/icons/name.png" alt="">ESPECIALIDAD</label>
+								<input type="text" name="especialidad" placeholder="Especialidad" required>
 							</div>
 						</li>
 						<li>
 							
 								<label><img src="img/icons/name.png" alt="">SELECCIONA TUS INTERESES</label>
-								<label><input type="checkbox" value="">Option 1</label>
+								<label><input type="checkbox" value="" name="interesm">Option 1</label>
 								<label><input type="checkbox" value="">Option 2</label>
 								<label><input type="checkbox" value="">Option 3</label>								
 							
@@ -693,7 +705,7 @@ div.panel.show {
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/password.png" alt="">CONTRASEÑA</label>
-								<input type="text" placeholder="PASSWORD" required><BR><BR> 
+								<input type="password" name="passm" placeholder="PASSWORD" required><BR><BR> 
 							</div>
 						</li>
 
@@ -708,79 +720,80 @@ div.panel.show {
 
 				<button class="accordion">Competidor</button>
 								<div class="panel">
- 								 <form>
+ 				<form action="altacompetidor.php" method="post">
 					<ul class="clearfix">
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/name.png" alt="" >NOMBRE</label>
-								<input type="text" placeholder="Nombre" required>
+								<input type="text" name="nombrec" placeholder="Nombre" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/name.png" alt="">APELLIDO PATERNO</label>
-								<input type="text" placeholder="Apellido Paterno" required>
+								<input type="text"  name="apc" placeholder="Apellido Paterno" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/name.png" alt="">APELLIDO MATERNO</label>
-								<input type="text" placeholder="Apellido Materno" required>
+								<input type="text"  name="amc" placeholder="Apellido Materno" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/name.png" alt="">EDAD</label>
-								<input type="Number" placeholder="Edad" required>
+								<input type="Number"  name="edadc" placeholder="Edad" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/email.png" alt="">CODIGO POSTAL</label>
-								<input type="text" placeholder="Código Postal" onkeypress="return valida(event)" size="5" maxlength="5" minlength="5" required>
+								<input type="text"  name="cpc" placeholder="Código Postal" onkeypress="return valida(event)" size="5" maxlength="5" minlength="5" required>
 							
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/email.png" alt="">EMAIL</label>
-								<input type="text" placeholder="Ingresa tu email" required>
+								<input type="text"  name="emailc" placeholder="Ingresa tu email" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/phone.png" alt="">TELÉFONO</label>
-								<input type="text" placeholder="Ingresa tu número"  onkeypress="return valida(event)" required>
+								<input type="text" placeholder="Ingresa tu número"  name="telc" onkeypress="return valida(event)" required>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/phone.png" alt="">TELÉFONO CELULAR</label>
-								<input type="text" placeholder="Ingresa tu número celular" onkeypress="return valida(event)" required>
+								<input type="text" placeholder="Ingresa tu número celular"  name="celc" onkeypress="return valida(event)" required>
+							</div>
+						</li>
+						<li>
+							<div class="input-wrap">
+								<label><img src="img/icons/name.png" alt="">DIRECCIÓN</label>
+								<input type="text" name="direccionC" placeholder="Ingresa tu direccón" required><BR><BR>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/name.png" alt="">RFC</label>
-								<input type="text" placeholder="Ingresa tu número de empleado" onkeypress="return valida(event)" required><BR><BR>
+								<input type="text" placeholder="Ingresa tu número de empleado"  name="rfc"  required><BR><BR>
 							</div>
 						</li>
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/name.png" alt="">EMPRESA</label>
-								<input type="text" placeholder="Ingresa tu empresa" required>
+								<input type="text" placeholder="Ingresa tu empresa"  name="empresac" required>
 							</div>
 						</li>
-						<li>
-							<div class="input-wrap">
-								<label><img src="img/icons/name.png" alt="">ESPECIALIDAD</label>
-								<input type="text" placeholder="Especialidad" required>
-							</div>
-						</li>
+						
 						<li>
 							
 								<label><img src="img/icons/name.png" alt="">SELECCIONA TUS INTERESES</label>
-								<label><input type="checkbox" value="">Option 1</label>
+								<label><input type="checkbox"  name="interesc" value="">Option 1</label>
 								<label><input type="checkbox" value="">Option 2</label>
 								<label><input type="checkbox" value="">Option 3</label>								
 							
@@ -789,7 +802,7 @@ div.panel.show {
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/password.png" alt="">CONTRASEÑA</label>
-								<input type="text" placeholder="PASSWORD" required><BR><BR> 
+								<input type="password" placeholder="PASSWORD"  name="passc" required><BR><BR> 
 							</div>
 						</li>
 
