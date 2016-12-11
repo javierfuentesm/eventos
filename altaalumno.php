@@ -1,9 +1,16 @@
 
+<<<<<<< HEAD
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    <meta name="viewport" content="width=device-width, initial-scale=1">
+=======
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+>>>>>>> origin/master
 <?php
 
  require 'bd.php';
@@ -12,9 +19,12 @@
     $contrasena="";
     $base_de_datos="evento";
     $mi_bd = new BD($servidor,$usuario,$contrasena,$base_de_datos);
+<<<<<<< HEAD
     $mi_bd2 = new BD($servidor,$usuario,$contrasena,$base_de_datos);
     $mi_bd3 =new mysqli($servidor, $usuario, $contrasena, $base_de_datos);
 
+=======
+>>>>>>> origin/master
 
      //insertar multiples filas
 
@@ -32,6 +42,7 @@
     $contrasena=$_POST["password"];
     $direccion=$_POST["direccion"];
 
+<<<<<<< HEAD
 
 
     $tabla="participante";
@@ -62,5 +73,23 @@ echo"
 }else {
    echo"
 <div class='container'><div class='alert alert-warning alert-dismissable fade in'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Success!</strong> Ha habido un error</div></div>";
+=======
+    echo $nombre;
+    
+
+    $tabla="participante";
+    $columnas= array("id_part","contrasena","nombre","apellidoP","apellidoM","edad","tel","direccion","CP","cel","email");
+    $valores= array(array(1,"'$contrasena'","'$nombre'","'$apellidoP'","'$apellidoM'",$edad,"'$tel'","'$direccion'",$CP,"'$cel'","'$email'"));
+    $mi_bd->insertar($tabla, $columnas, $valores );
+    echo $mi_bd->resultado(); //imprimir resultado de la operación
+
+
+     if ($mi_bd == false) {
+$result='<div class="alert alert-success">
+  <strong>Success!</strong> Indicates a successful or positive action.
+</div>';
+}else {
+    $result='<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later</div>';
+>>>>>>> origin/master
 }
 ?>

@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/master
 <?php
     class BD
     {
@@ -34,7 +37,10 @@
         {
             $this->resultado = $enter_resultado;
         }
+<<<<<<< HEAD
         
+=======
+>>>>>>> origin/master
         public function insertar($tabla,$columnas,$valores)
         {
             $i;
@@ -68,11 +74,18 @@
             }
             $sql.=";";
             if ($this->conn->query($sql) === TRUE) {
+<<<<<<< HEAD
                 $this->resultado=TRUE;
                
                 } else {
                     $this->resultado= $this->resultado="Error al insertar los datos: " . $sql . "<br>" . $this->conn->error;
                 }
+=======
+                $this->resultado="Exito al insertar los datos: ". $sql;
+            } else {
+                $this->resultado="Error al insertar los datos: " . $sql . "<br>" . $this->conn->error;
+            }
+>>>>>>> origin/master
         }
 
         public function eliminar($tabla,$columnas_condicion,$valores_condicion)
