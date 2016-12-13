@@ -10,64 +10,45 @@
 
   </head>
   <body>
-	<div id="ConcursoTableContainer" style="width: 100%;"></div>
+	<div id="CongresoTableContainer" style="width: 100%;"></div>
 	<script type="text/javascript">
 
 		$(document).ready(function () {
 
 		    //Prepare jTable
-			$('#ConcursoTableContainer').jtable({
+			$('#CongresoTableContainer').jtable({
 				title: 'Eventos',
 				actions:
                 {
-					listAction: 'concurso_actions.php?action=list',
-					updateAction: 'concurso_actions.php?action=update',
-					deleteAction: 'concurso_actions.php?action=delete'
+					listAction: 'congreso_actions.php?action=list',
+					updateAction: 'congreso_actions.php?action=update',
+					deleteAction: 'congreso_actions.php?action=delete'
 				},
 				fields: {
 					id_evento:
 					{
 						title: 'id_evento',
-                        edit: false,
 						key: true,
 						width: '5%'
 					}
 					,
-                    titulo_e
-                    {
-                        title: 'titulo_e',
-                        width: '5%'
-                    }
-                    ,
-					id_concurso:
+					titulo_e:
 					{
-						title: 'id_concurso',
+						title: 'titulo_e',
                         key: true,
 						width: '5%'
 					}
 					,
-					categoria:
+					id_memoria:
 					{
-						title: 'categoria',
+						title: 'id_memoria',
 						width: '5%'
-					}
-					,
-					sala:
-					{
-						title: 'sala',
-						width: '5%'
-					}
-					,
-					premio:
-					{
-						title: 'premio',
-						width: '5%',
 					}
 				}
 			});
 
 			//Load person list from server
-			$('#ConcursoTableContainer').jtable('load');
+			$('#CongresoTableContainer').jtable('load');
 
 		});
 

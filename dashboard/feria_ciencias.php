@@ -10,64 +10,50 @@
 
   </head>
   <body>
-	<div id="ConcursoTableContainer" style="width: 100%;"></div>
+	<div id="feria_ciencias" style="width: 100%;"></div>
 	<script type="text/javascript">
 
 		$(document).ready(function () {
 
 		    //Prepare jTable
-			$('#ConcursoTableContainer').jtable({
+			$('#feria_ciencias').jtable({
 				title: 'Eventos',
 				actions:
                 {
-					listAction: 'concurso_actions.php?action=list',
-					updateAction: 'concurso_actions.php?action=update',
-					deleteAction: 'concurso_actions.php?action=delete'
+					listAction: 'feria_ciencias_actions.php?action=list',
+					updateAction: 'feria_ciencias_actions.php?action=update',
+					deleteAction: 'feria_ciencias_actions.php?action=delete'
 				},
 				fields: {
-					id_evento:
+					id_feriadc:
 					{
-						title: 'id_evento',
-                        edit: false,
-						key: true,
+						title: 'id_feriadc',
+                        key: true,
 						width: '5%'
-					}
-					,
-                    titulo_e
+					},
+                    titulo_e:
                     {
                         title: 'titulo_e',
                         width: '5%'
                     }
+					,
+                    edadmin:
+                    {
+                        title: 'edadmin',
+                        width: '5%'
+                    }
                     ,
-					id_concurso:
+					edadMax:
 					{
-						title: 'id_concurso',
-                        key: true,
+						title: 'edadMax',
 						width: '5%'
 					}
-					,
-					categoria:
-					{
-						title: 'categoria',
-						width: '5%'
-					}
-					,
-					sala:
-					{
-						title: 'sala',
-						width: '5%'
-					}
-					,
-					premio:
-					{
-						title: 'premio',
-						width: '5%',
-					}
+
 				}
 			});
 
 			//Load person list from server
-			$('#ConcursoTableContainer').jtable('load');
+			$('#feria_ciencias').jtable('load');
 
 		});
 

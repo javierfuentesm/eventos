@@ -10,19 +10,19 @@
 
   </head>
   <body>
-	<div id="ConcursoTableContainer" style="width: 100%;"></div>
+	<div id="simposio_table" style="width: 100%;"></div>
 	<script type="text/javascript">
 
 		$(document).ready(function () {
 
 		    //Prepare jTable
-			$('#ConcursoTableContainer').jtable({
+			$('#simposio_table').jtable({
 				title: 'Eventos',
 				actions:
                 {
-					listAction: 'concurso_actions.php?action=list',
-					updateAction: 'concurso_actions.php?action=update',
-					deleteAction: 'concurso_actions.php?action=delete'
+					listAction: 'evento_actions.php?action=list',
+					updateAction: 'evento_actions.php?action=update',
+					deleteAction: 'evento_actions.php?action=delete'
 				},
 				fields: {
 					id_evento:
@@ -33,41 +33,34 @@
 						width: '5%'
 					}
 					,
-                    titulo_e
-                    {
-                        title: 'titulo_e',
-                        width: '5%'
-                    }
-                    ,
-					id_concurso:
+					id_simposio:
 					{
-						title: 'id_concurso',
-                        key: true,
+						title: 'id_simposio',
 						width: '5%'
 					}
 					,
-					categoria:
+					titulo_e:
 					{
-						title: 'categoria',
+						title: 'titulo_e',
 						width: '5%'
 					}
 					,
-					sala:
+					tema:
 					{
-						title: 'sala',
+						title: 'tema',
 						width: '5%'
 					}
 					,
-					premio:
+					id_recopilacion:
 					{
-						title: 'premio',
+						title: 'id_recopilacion',
 						width: '5%',
-					}
+					},
 				}
 			});
 
 			//Load person list from server
-			$('#ConcursoTableContainer').jtable('load');
+			$('#simposio_table').jtable('load');
 
 		});
 

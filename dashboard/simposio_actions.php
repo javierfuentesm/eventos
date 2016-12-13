@@ -10,7 +10,7 @@ try
 	if($_GET["action"] == "list")
 	{
 		//Get records from database
-		$result = mysql_query("SELECT * FROM concurso,evento where concurso.id_evento=evento.id_evento;");
+		$result = mysql_query("SELECT * FROM evento,simposio where evento.id_evento=simposio.id_evento;");
 
 		//Add all records to an array
 		$rows = array();
@@ -47,7 +47,7 @@ try
 	else if($_GET["action"] == "update")
 	{
 		//Update record in database
-		$result = mysql_query("UPDATE concurso SET id_concurso = '" . $_POST["id_concurso"] . "', categoria = '" . $_POST["categoria"] ."', sala = '". $_POST["sala"]."', premio = '". $_POST["premio"]."' WHERE id_evento = " . $_POST["id_evento"] . ";");
+		$result = mysql_query("UPDATE evento SET tema = '" . $_POST["tema"] . "', id_recopilacion = '" . $_POST["id_recopilacion"] ."' WHERE id_evento = " . $_POST["id_evento"] . ";");
 
 		//Return result to jTable
 		$jTableResult = array();
@@ -58,7 +58,7 @@ try
 	else if($_GET["action"] == "delete")
 	{
 		//Delete from database
-		$result = mysql_query("DELETE FROM concurso WHERE id_evento = " . $_POST["id_evento"] . ";");
+		$result = mysql_query("DELETE FROM simposio WHERE id_evento = " . $_POST["id_evento"] . ";");
 
 		//Return result to jTable
 		$jTableResult = array();
