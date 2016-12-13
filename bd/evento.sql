@@ -60,10 +60,12 @@ CREATE TABLE `alumno` (
   `interes` varchar(30) NOT NULL,
   `socio` int(11) DEFAULT NULL,
   PRIMARY KEY (`boleta`),
-  KEY `FK2` (`id_part`),
-  KEY `FK27` (`socio`),
-  CONSTRAINT `FK2` FOREIGN KEY (`id_part`) REFERENCES `participante` (`id_part`),
-  CONSTRAINT `FK27` FOREIGN KEY (`socio`) REFERENCES `socio` (`num_socio`)
+  KEY `FK29` (`socio`),
+  KEY `FK4` (`id_part`),
+  CONSTRAINT `FK2` FOREIGN KEY (`id_part`) REFERENCES `participante` (`id_part`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK27` FOREIGN KEY (`socio`) REFERENCES `socio` (`num_socio`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK29` FOREIGN KEY (`socio`) REFERENCES `socio` (`num_socio`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK4` FOREIGN KEY (`id_part`) REFERENCES `participante` (`id_part`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -90,9 +92,7 @@ CREATE TABLE `competidor` (
   `socio` int(11) DEFAULT NULL,
   PRIMARY KEY (`rfc`),
   KEY `FK4` (`id_part`),
-  KEY `FK29` (`socio`),
-  CONSTRAINT `FK29` FOREIGN KEY (`socio`) REFERENCES `socio` (`num_socio`),
-  CONSTRAINT `FK4` FOREIGN KEY (`id_part`) REFERENCES `participante` (`id_part`)
+  KEY `FK29` (`socio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -120,7 +120,7 @@ CREATE TABLE `concurso` (
   `premio` varchar(45) NOT NULL,
   PRIMARY KEY (`id_concurso`),
   KEY `FK8` (`id_evento`),
-  CONSTRAINT `FK8` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`)
+  CONSTRAINT `FK8` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -146,7 +146,7 @@ CREATE TABLE `congreso` (
   `id_memoria` int(11) NOT NULL,
   PRIMARY KEY (`id_congreso`),
   KEY `FK10` (`id_evento`),
-  CONSTRAINT `FK10` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`)
+  CONSTRAINT `FK10` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -170,7 +170,7 @@ CREATE TABLE `congreso_especialista` (
   `id_congreso` int(11) NOT NULL,
   `especialista` varchar(25) NOT NULL DEFAULT '',
   PRIMARY KEY (`id_congreso`,`especialista`),
-  CONSTRAINT `FK13` FOREIGN KEY (`id_congreso`) REFERENCES `congreso` (`id_congreso`)
+  CONSTRAINT `FK13` FOREIGN KEY (`id_congreso`) REFERENCES `congreso` (`id_congreso`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -194,7 +194,7 @@ CREATE TABLE `congreso_tema` (
   `id_congreso` int(11) NOT NULL,
   `tema` varchar(25) NOT NULL DEFAULT '',
   PRIMARY KEY (`id_congreso`,`tema`),
-  CONSTRAINT `FK14` FOREIGN KEY (`id_congreso`) REFERENCES `congreso` (`id_congreso`)
+  CONSTRAINT `FK14` FOREIGN KEY (`id_congreso`) REFERENCES `congreso` (`id_congreso`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -253,8 +253,8 @@ CREATE TABLE `evento_organizador` (
   `id_organizador` int(11) NOT NULL,
   PRIMARY KEY (`id_evento`,`id_organizador`),
   KEY `FK24` (`id_organizador`),
-  CONSTRAINT `FK19` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`),
-  CONSTRAINT `FK24` FOREIGN KEY (`id_organizador`) REFERENCES `organizador` (`id_organizador`)
+  CONSTRAINT `FK19` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK24` FOREIGN KEY (`id_organizador`) REFERENCES `organizador` (`id_organizador`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -278,7 +278,7 @@ CREATE TABLE `feria_areas` (
   `id_feriadc` int(11) NOT NULL,
   `area` varchar(20) NOT NULL,
   PRIMARY KEY (`id_feriadc`,`area`),
-  CONSTRAINT `FK12` FOREIGN KEY (`id_feriadc`) REFERENCES `feria_ciencias` (`id_feriadc`)
+  CONSTRAINT `FK12` FOREIGN KEY (`id_feriadc`) REFERENCES `feria_ciencias` (`id_feriadc`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -305,7 +305,7 @@ CREATE TABLE `feria_ciencias` (
   `edadMax` int(11) NOT NULL,
   PRIMARY KEY (`id_feriadc`),
   KEY `FK9` (`id_evento`),
-  CONSTRAINT `FK9` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`)
+  CONSTRAINT `FK9` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -335,8 +335,8 @@ CREATE TABLE `maestro` (
   PRIMARY KEY (`num_empleado`),
   KEY `FK5` (`id_part`),
   KEY `FK28` (`socio`),
-  CONSTRAINT `FK28` FOREIGN KEY (`socio`) REFERENCES `socio` (`num_socio`),
-  CONSTRAINT `FK5` FOREIGN KEY (`id_part`) REFERENCES `participante` (`id_part`)
+  CONSTRAINT `FK28` FOREIGN KEY (`socio`) REFERENCES `socio` (`num_socio`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK5` FOREIGN KEY (`id_part`) REFERENCES `participante` (`id_part`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -361,7 +361,7 @@ CREATE TABLE `no_socio` (
   `rfc` varchar(13) NOT NULL,
   PRIMARY KEY (`rfc`),
   KEY `FK3` (`id_part`),
-  CONSTRAINT `FK3` FOREIGN KEY (`id_part`) REFERENCES `participante` (`id_part`)
+  CONSTRAINT `FK3` FOREIGN KEY (`id_part`) REFERENCES `participante` (`id_part`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -417,8 +417,8 @@ CREATE TABLE `pago` (
   `monto` double NOT NULL,
   PRIMARY KEY (`id_evento`,`id_part`),
   KEY `FK21` (`id_part`),
-  CONSTRAINT `FK20` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`),
-  CONSTRAINT `FK21` FOREIGN KEY (`id_part`) REFERENCES `participante` (`id_part`)
+  CONSTRAINT `FK20` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK21` FOREIGN KEY (`id_part`) REFERENCES `participante` (`id_part`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -476,8 +476,8 @@ CREATE TABLE `registro` (
   `fecha` date NOT NULL,
   PRIMARY KEY (`id_evento`,`id_part`),
   KEY `FK23` (`id_part`),
-  CONSTRAINT `FK22` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`),
-  CONSTRAINT `FK23` FOREIGN KEY (`id_part`) REFERENCES `participante` (`id_part`)
+  CONSTRAINT `FK22` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK23` FOREIGN KEY (`id_part`) REFERENCES `participante` (`id_part`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -504,7 +504,7 @@ CREATE TABLE `simposio` (
   `id_recopilacion` int(11) NOT NULL,
   PRIMARY KEY (`id_simposio`),
   KEY `FK11` (`id_evento`),
-  CONSTRAINT `FK11` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`)
+  CONSTRAINT `FK11` FOREIGN KEY (`id_evento`) REFERENCES `evento` (`id_evento`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -528,7 +528,7 @@ CREATE TABLE `simposio_expositores` (
   `id_simposio` int(11) NOT NULL,
   `expositores` varchar(25) NOT NULL,
   PRIMARY KEY (`id_simposio`,`expositores`),
-  CONSTRAINT `FK15` FOREIGN KEY (`id_simposio`) REFERENCES `simposio` (`id_simposio`)
+  CONSTRAINT `FK15` FOREIGN KEY (`id_simposio`) REFERENCES `simposio` (`id_simposio`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -552,7 +552,7 @@ CREATE TABLE `simposio_facetas` (
   `id_simposio` int(11) NOT NULL,
   `faceta` varchar(20) NOT NULL,
   PRIMARY KEY (`id_simposio`,`faceta`),
-  CONSTRAINT `FK16` FOREIGN KEY (`id_simposio`) REFERENCES `simposio` (`id_simposio`)
+  CONSTRAINT `FK16` FOREIGN KEY (`id_simposio`) REFERENCES `simposio` (`id_simposio`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -578,7 +578,7 @@ CREATE TABLE `socio` (
   `id_part` int(11) NOT NULL,
   PRIMARY KEY (`num_socio`),
   KEY `FK1` (`id_part`),
-  CONSTRAINT `FK1` FOREIGN KEY (`id_part`) REFERENCES `participante` (`id_part`)
+  CONSTRAINT `FK1` FOREIGN KEY (`id_part`) REFERENCES `participante` (`id_part`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -608,4 +608,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-10 21:03:43
+-- Dump completed on 2016-12-13 10:53:25
