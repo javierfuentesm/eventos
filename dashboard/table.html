@@ -62,21 +62,16 @@
                 <li>
                     <a href="user.html">
                         <i class="pe-7s-user"></i>
-                        <p>User Profile</p>
+                        <p>Perfil de Usuario</p>
                     </a>
                 </li>
                 <li class="active">
                     <a href="table.html">
                         <i class="pe-7s-note2"></i>
-                        <p>Table List</p>
+                        <p>Usuarios</p>
                     </a>
                 </li>
-                <li>
-                    <a href="typography.html">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Typography</p>
-                    </a>
-                </li>
+               
                 <li>
                     <a href="icons.html">
                         <i class="pe-7s-science"></i>
@@ -86,21 +81,11 @@
                 <li>
                     <a href="maps.html">
                         <i class="pe-7s-map-marker"></i>
-                        <p>Maps</p>
+                        <p>Eventos</p>
                     </a>
                 </li>
-                <li>
-                    <a href="notifications.html">
-                        <i class="pe-7s-bell"></i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
-				<li class="active-pro">
-                    <a href="upgrade.html">
-                        <i class="pe-7s-rocket"></i>
-                        <p>Upgrade to PRO</p>
-                    </a>
-                </li>
+            
+				
             </ul>
     	</div>
     </div>
@@ -180,6 +165,92 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
+                    
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Tabla de Organizadores</h4>
+                                <p class="category">Aqui podras hacer cambios y podras ver los organizadores que estan registrados</p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                            <center>
+                                <div id="OrganizadoresTableContainer" style="width: 1070px;"></div>
+                                <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            //Prepare jTable
+            $('#OrganizadoresTableContainer').jtable({
+                title: 'Tabla de organizadores',
+                actions: {
+                    listAction: 'Organizadoractions.php?action=list',
+                    createAction: 'Organizadoractions.php?action=create',                    
+                    updateAction: 'Organizadoractions.php?action=update',
+                    deleteAction: 'Organizadoractions.php?action=delete'
+                },
+                fields: {
+                    id_organizador: {
+                        title: 'ID Organizador',
+                        key: true,
+                      
+                        edit: false,
+                        width: '10%',
+                        list: true
+                    },
+                    nombre: {
+                        title: 'Nombre',                       
+                       
+                      
+                        width: '10%'
+                    
+                    },
+                    apellPa: {
+                        title: 'Apellido Paterno',
+                        
+                        width: '15%'
+                    },
+                    apellMa: {
+                        title: 'Apellido Materno',
+                        
+                        width: '15%'
+                    },
+                    RFC: {
+                        title: 'RFC',
+                        
+                        width: '5%'
+                    },
+                      telefono: {
+                        title: 'Telefono',
+                        
+                        width: '10%'
+                    },
+                                            
+                      email: {
+                        title: 'Email',
+                        
+                        width: '10%'
+                    },
+                    password: {
+                        title: 'Contraseña',
+                        
+                        width: '10%'
+                    }
+                   
+                }
+            });
+
+            //Load person list from server
+            $('#OrganizadoresTableContainer').jtable('load');
+
+        });
+
+    </script>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+
+
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
@@ -423,72 +494,78 @@
                             </div>
                         </div>
                     </div>
-
-
-                    <div class="col-md-12">
-                        <div class="card card-plain">
+                     <div class="col-md-12">
+                        <div class="card">
                             <div class="header">
-                                <h4 class="title">Table on Plain Background</h4>
-                                <p class="category">Here is a subtitle for this table</p>
+                                <h4 class="title">Tabla de competidores</h4>
+                                <p class="category">Aqui podras ver todos los competidores y hacer las modificaciones pertinentes</p>
                             </div>
                             <div class="content table-responsive table-full-width">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <th>ID</th>
-                                    	<th>Name</th>
-                                    	<th>Salary</th>
-                                    	<th>Country</th>
-                                    	<th>City</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                        	<td>1</td>
-                                        	<td>Dakota Rice</td>
-                                        	<td>$36,738</td>
-                                        	<td>Niger</td>
-                                        	<td>Oud-Turnhout</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>2</td>
-                                        	<td>Minerva Hooper</td>
-                                        	<td>$23,789</td>
-                                        	<td>Curaçao</td>
-                                        	<td>Sinaai-Waas</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>3</td>
-                                        	<td>Sage Rodriguez</td>
-                                        	<td>$56,142</td>
-                                        	<td>Netherlands</td>
-                                        	<td>Baileux</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>4</td>
-                                        	<td>Philip Chaney</td>
-                                        	<td>$38,735</td>
-                                        	<td>Korea, South</td>
-                                        	<td>Overland Park</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>5</td>
-                                        	<td>Doris Greene</td>
-                                        	<td>$63,542</td>
-                                        	<td>Malawi</td>
-                                        	<td>Feldkirchen in Kärnten</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>6</td>
-                                        	<td>Mason Porter</td>
-                                        	<td>$78,615</td>
-                                        	<td>Chile</td>
-                                        	<td>Gloucester</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
 
+                            <center>
+                                <div id="CompetidoresTableContainer" style="width: 1050px;"></div>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            //Prepare jTable
+            $('#CompetidoresTableContainer').jtable({
+                title: 'Tabla de competidores',
+                actions: {
+                    listAction: 'Competidoractions.php?action=list',
+                    updateAction: 'Competidoractions.php?action=update',
+                    deleteAction: 'Competidoractions.php?action=delete'
+                },
+               fields: {
+                    id_part: 
+                    {
+                        title: 'id_part',
+                        key: true,
+                        width: '10%',
+                        edit: false
+                    }
+                    
+                      ,
+                    rfc:
+                    {
+                        title: 'RFC',
+                        width: '10%'
+                      
+                    } ,
+
+                    nombre: 
+                    {
+                        title: 'Nombre',
+                        width: '10%',
+                        edit: false
+                    }
+                   
+                    ,
+                    empresa:
+                    {
+                        title: 'Empresa',
+                        width: '10%'
+                    }
+                   
+                  
+                   
+
+                    
+                }
+            });
+
+            //Load person list from server
+            $('#CompetidoresTableContainer').jtable('load');
+
+        });
+
+    </script>
+                                </center>
                             </div>
                         </div>
                     </div>
+
+
 
 
                 </div>
