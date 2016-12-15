@@ -149,29 +149,185 @@ div.panel.show {
                                 <h4 class="title">Registro de Eventos</h4>
                                 <p class="category">Aqui podras dar de alta los eventos</p>
                             </div>
-                     <button class="accordion">Feria de ciencias</button>
+                     <button class="accordion">Concurso</button>
                 <div class="panel">
                         <div class="card">
                             
                             <div class="content table-responsive table-full-width">
-                            <form method="Post" action="">
-                                Ingresa el ISBN <input type="text" class="form-control" name="ISBN" required><BR>
+                            <form method="Post" action="altaconcurso.php">
+                                Ingresa el ISBN <input type="number" class="form-control" name="ISBN" required><BR>
                                 Ingresa el titulo<input type="text" class="form-control" name="titulo" required><br>
+                                Clasificacion <select name="clasificacion" class="form-control" required>
+                                                <option value="Nacional">Nacional</option>
+                                                <option value="Internacional">Internacional</option>                                                
+                                                </select><br>
                                 Lugar<input type="text" class="form-control" name="lugar" required><br>
+                                Sala<input type="text" class="form-control" name="sala" required><br>
+                                Categoria<input type="text" class="form-control" name="categoria" required><br>
+                                Premio<input type="text" class="form-control" name="premio" required><br>
                                 Ubicacion<input type="text" class="form-control" name="ubicacion" required><br>
+                                Ubicacion Visual<input type="text" class="form-control" name="ubicacionv" required><br>
                                 Fecha de Inicio de registro <input type="date" class="form-control" name="inicior" required><br>
                                 Fecha de Fin de registro <input type="date" class="form-control" name="finr" required><br>
                                 Fecha de Trabajo <input type="date" class="form-control" name="trabajo" ><br>
                                 Fecha de Pago <input type="date" class="form-control" name="pago" required><br>
                                 Fecha de Inicio del evento <input type="date" class="form-control" name="inicioe" required><br>
                                 Fecha de Fin del evento  <input type="date" class="form-control" name="fine" required><br>
-                                Duracion <input type="number" name="duracion">
+                                Duracion <input type="text" class="form-control" name="duracion" ><br>
+                                Costo <input type="text"  class="form-control" name="costo" required><br>
+                                Descuento sera considerado en porcentaje<input type="text" name="descuento" class="form-control"><br>
+                                <button type="submit" class="form-control">REGISTRAR</button>
 
                             </form>
                             </div>
                         </div>
                     </div>
                     </div>
+
+                         <div class="col-md-12">
+                     <div class="header">
+                                
+                            </div>
+                     <button class="accordion">Feria de ciencias</button>
+                <div class="panel">
+                        <div class="card">
+                            
+                            <div class="content table-responsive table-full-width">
+                           <form method="Post" action="altaferia.php">
+                                Ingresa el ISBN <input type="number" class="form-control" name="ISBN" required><BR>
+                                Ingresa el titulo<input type="text" class="form-control" name="titulo" required><br>
+                                Clasificacion <select name="clasificacion" class="form-control">
+                                                <option value="Nacional">Nacional</option>
+                                                <option value="Internacional">Internacional</option>
+                                                
+                                                </select><br>
+                                Lugar<input type="text" class="form-control" name="lugar" required><br>
+                                 Categoria<input type="text" class="form-control" name="categoria" required><br>
+                                Ubicacion<input type="text" class="form-control" name="ubicacion" required><br>
+                                Ubicacion Visual<input type="text" class="form-control" name="ubicacionv" required><br>
+                                Fecha de Inicio de registro <input type="date" class="form-control" name="inicior" required><br>
+                                Fecha de Fin de registro <input type="date" class="form-control" name="finr" required><br>
+                                Fecha de Trabajo <input type="date" class="form-control" name="trabajo" ><br>
+                                Fecha de Pago <input type="date" class="form-control" name="pago" required><br>
+                                Fecha de Inicio del evento <input type="date" class="form-control" name="inicioe" required><br>
+                                Fecha de Fin del evento  <input type="date" class="form-control" name="fine" required><br>
+                                Duracion <input type="text" class="form-control" name="duracion" ><br>
+                                Costo <input type="text" class="form-control" name="costo" required><br>
+                                Descuento sera considerado en porcentaje<input type="text" class="form-control" name="descuento"><br>
+                                Edad minima <input type="number" class="form-control" name="minima"  min="6" max="18" required><br>
+                                Edad máxima <input type="number" class="form-control" name="maxima"  min="25" max="32" required><br>
+                                Area <select name="area" class="form-control">
+                                                <option value="Ingenieria">Ingenieria</option>
+                                                <option value="Ciencias computacionales">Ciencias computacionales</option>
+                                                <option value="Ciencias exactas">Ciencias exactas</option>
+                                                <option value="Medicina y salud">Medicina y salud</option>                                    
+                                                 </select><br>
+                                <button type="submit" class="form-control">REGISTRAR</button>
+
+
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+
+                <div class="col-md-12">
+                     <div class="header">
+                                
+                            </div>
+                     <button class="accordion">Congreso</button>
+                         <div class="panel">
+                        <div class="card">
+                            
+                            <div class="content table-responsive table-full-width">
+                           <form method="Post" action="altacongreso.php">
+                                Ingresa el ISBN <input type="number" class="form-control" name="ISBN" required><BR>
+                                Ingresa el titulo<input type="text" class="form-control" name="titulo" required><br>
+                                Clasificacion <select name="clasificacion" class="form-control">
+                                                <option value="Nacional">Nacional</option>
+                                                <option value="Internacional">Internacional</option>
+                                                
+                                                </select><br>
+                                ID Memoria<input type="text" class="form-control" name="memoria" required><br>
+                                Especialista<input type="text" class="form-control" name="especialista" required><br>
+                                Lugar<input type="text" class="form-control" name="lugar" required><br>
+                                 Categoria<input type="text" class="form-control" name="categoria" required><br>
+                                Tema<input type="text" class="form-control" name="tema" required><br>
+                                Ubicacion<input type="text" class="form-control" name="ubicacion" required><br>
+                                Ubicacion Visual<input type="text" class="form-control" name="ubicacionv" required><br>
+                                Fecha de Inicio de registro <input type="date" class="form-control" name="inicior" required><br>
+                                Fecha de Fin de registro <input type="date" class="form-control" name="finr" required><br>
+                                Fecha de Trabajo <input type="date" class="form-control" name="trabajo" ><br>
+                                Fecha de Pago <input type="date" class="form-control" name="pago" required><br>
+                                Fecha de Inicio del evento <input type="date" class="form-control" name="inicioe" required><br>
+                                Fecha de Fin del evento  <input type="date" class="form-control" name="fine" required><br>
+                                Duracion <input type="text" name="duracion" class="form-control"><br>
+                                Costo <input type="text" name="costo" class="form-control" required><br>
+                                Descuento sera considerado en porcentaje<input type="text" class="form-control" name="descuento"><br>
+                                <button type="submit" class="form-control">REGISTRAR</button>
+
+
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+ <div class="col-md-12">
+                     <div class="header">
+                                
+                            </div>
+                     <button class="accordion">Simposio</button>
+                         <div class="panel">
+                        <div class="card">
+                            
+                            <div class="content table-responsive table-full-width">
+                           <form method="Post" action="altasimposio.php">
+                                Ingresa el ISBN <input type="number" class="form-control" name="ISBN" required><BR>
+                                Ingresa el titulo<input type="text" class="form-control" name="titulo" required><br>
+                                Clasificacion <select name="clasificacion" class="form-control">
+                                                <option value="volvo">Nacional</option>
+                                                <option value="saab">Internacional</option>
+                                                
+                                                </select><br>
+                                Id recopilacion <input type="number" class="form-control" name="memoria" required><br>
+                                Tema <input type="text" class="form-control" name="tema" required><br>
+                                Expositor<input type="text" class="form-control" name="expositor" required><br>
+                                Faceta <select name="faceta" class="form-control">
+                                                <option value="Educativo">Educativo</option>
+                                                <option value="Biologico">Biologico</option>
+                                                <option value="Cultural">Cultural</option>
+                                                <option value="Psicologico">Psicologico</option>
+                                                <option value="Sociologico">Sociologico</option>
+                                                <option value="Sociologico">Espiritual</option>
+
+                                                
+                                                </select><br>
+
+                                Lugar<input type="text" class="form-control" name="lugar" required><br>
+                                 Categoria<input type="text" class="form-control" name="categoria" required><br>
+                                Ubicacion<input type="text" class="form-control" name="ubicacion" required><br>
+                                Ubicacion Visual<input type="text" class="form-control" name="ubicacionv" required><br>
+                                Fecha de Inicio de registro <input type="date" class="form-control" name="inicior" required><br>
+                                Fecha de Fin de registro <input type="date" class="form-control" name="finr" required><br>
+                                Fecha de Trabajo <input type="date" class="form-control" name="trabajo" ><br>
+                                Fecha de Pago <input type="date" class="form-control" name="pago" required><br>
+                                Fecha de Inicio del evento <input type="date" class="form-control" name="inicioe" required><br>
+                                Fecha de Fin del evento  <input type="date" class="form-control" name="fine" required><br>
+                                Duracion <input type="text" name="duracion" class="form-control" ><br>
+                                Costo <input type="text" name="costo" class="form-control" required><br>
+                                Descuento sera considerado en porcentaje<input type="text" name="descuento" class="form-control"><br>
+                                <button type="submit" class="form-control">REGISTRAR</button>
+
+
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+x
+
 
 
 
@@ -559,34 +715,13 @@ $(document).ready(function () {
             </div>
         </div>
 
-        <footer class="footer">
+     <footer class="footer">
             <div class="container-fluid">
                 <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                               Blog
-                            </a>
-                        </li>
-                    </ul>
+                 
                 </nav>
                 <p class="copyright pull-right">
-                    &copy; 2016 <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                    &copy; 2016 hecho con amor por nosotros <3
                 </p>
             </div>
         </footer>
