@@ -10,7 +10,8 @@ try
 	if($_GET["action"] == "list")
 	{
 		//Get records from database
-		$result = mysql_query("SELECT * FROM feria_ciencias,evento where feria_ciencias.id_evento=evento.id_evento;");
+
+		$result = mysql_query("SELECT * FROM evento,feria_ciencias where evento.id_evento=feria_ciencias.id_evento;");
 
 		//Add all records to an array
 		$rows = array();
@@ -47,7 +48,6 @@ try
 	else if($_GET["action"] == "update")
 	{
 		//Update record in database
-		$result = mysql_query("UPDATE feria_ciencias SET edadmin = '" . $_POST["edadmin"] . "', edadMax = '" . $_POST["edadMax"] ."' WHERE id_evento = " . $_POST["id_evento"] . ";");
 
 		//Return result to jTable
 		$jTableResult = array();
@@ -58,7 +58,6 @@ try
 	else if($_GET["action"] == "delete")
 	{
 		//Delete from database
-		$result = mysql_query("DELETE FROM feria_ciencias WHERE id_evento = " . $_POST["id_evento"] . ";");
 
 		//Return result to jTable
 		$jTableResult = array();
