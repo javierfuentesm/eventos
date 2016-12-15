@@ -91,8 +91,10 @@ CREATE TABLE `competidor` (
   `empresa` varchar(20) DEFAULT NULL,
   `socio` int(11) DEFAULT NULL,
   PRIMARY KEY (`rfc`),
-  KEY `FK4` (`id_part`),
-  KEY `FK29` (`socio`)
+  KEY `FK30` (`id_part`),
+  KEY `FK31` (`socio`),
+  CONSTRAINT `FK30` FOREIGN KEY (`id_part`) REFERENCES `participante` (`id_part`),
+  CONSTRAINT `FK31` FOREIGN KEY (`socio`) REFERENCES `socio` (`num_socio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -223,7 +225,8 @@ CREATE TABLE `evento` (
   `ubicacion_v` varchar(45) NOT NULL,
   `FechIniReg` date NOT NULL,
   `FechFinReg` date NOT NULL,
-  `Fechtrbajo` date DEFAULT NULL,
+  `costo` float NOT NULL,
+  `descuento` float DEFAULT NULL,
   `FechPago` date NOT NULL,
   `FechIniEv` date NOT NULL,
   `FechFinEv` date NOT NULL,
@@ -608,4 +611,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-13 10:53:25
+-- Dump completed on 2016-12-14 19:26:26
