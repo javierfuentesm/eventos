@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Agenda de Eventos</title>
-	
+
 	<!-- Responsive Meta Tag -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,7 +21,7 @@
     if (tecla==8){
         return true;
     }
-        
+
     // Patron de entrada, en este caso solo acepta numeros
     patron =/[0-9]/;
     tecla_final = String.fromCharCode(tecla);
@@ -47,7 +47,7 @@ button.accordion {
 }
 
 button.accordion.active, button.accordion:hover {
-    background-color: #ddd; 
+    background-color: #ddd;
 }
 
 div.panel {
@@ -62,12 +62,12 @@ div.panel.show {
 </style>
 </head>
 <body>
-	
+
 	<!-- .preloader -->
 	<div class="preloader"></div>
 	<!-- /.preloader -->
-	
-	
+
+
 	<!-- #header -->
 	<header id="header">
 		<div class="container">
@@ -80,11 +80,11 @@ div.panel.show {
 
 				<!-- .mainmenu-container -->
 				<nav class="col-lg-9 col-md-9 col-sm-6 col-xs-6 mainmenu-container">
-					<button class="nav-toggler">Navigation <i class="fa fa-bars"></i></button>		
+					<button class="nav-toggler">Navigation <i class="fa fa-bars"></i></button>
 					<ul class="mainmenu clearfix">
 						<li class="nav-closer"><i class="fa fa-close"></i></li>
 						<li class="current scrollToLink dropdown">
-							<a href="#banner">Inicio</a>							
+							<a href="#banner">Inicio</a>
 						</li>
 						<li class="deadlink">
 							<a href="#">Páginas</a>
@@ -100,13 +100,13 @@ div.panel.show {
 								</li>
 							</ul>
 						</li>
-						<li class="scrollToLink"><a href="#upcoming-event">EVENTO</a></li>			
+						<li class="scrollToLink"><a href="#upcoming-event">EVENTO</a></li>
 						<li class="scrollToLink"><a href="#event-speakers">DISCURSANTE</a></li>
 						<li class="scrollToLink"><a href="#pricing-table">PRECIOS</a></li>
 						<li class="scrollToLink"><a href="#gallery">GALERIA</a></li>
-						
+
 						<li class="scrollToLink"><a href="#contact">CONTACTO</a></li>
-						
+
 					</ul>
 				</nav>
 				<!-- /.mainmenu-container -->
@@ -121,28 +121,28 @@ div.panel.show {
 			<div class="banner">
 				<ul>
 
-					<li 
-						data-transition="fade" 
-						data-slotamount="7" 
+					<li
+						data-transition="fade"
+						data-slotamount="7"
 						class="slider-1 text-center gradient-overlay"
 						data-thumb="img/background/banner-bg.jpg"
 						data-title="EXPERTISE YOU CAN TRUST">
-						<img 
-							src="img/background/banner-bg.jpg" 
-							data-bgposition="center center" 
-							data-kenburns="on" 
-							data-duration="20000" 
-							data-ease="Linear.easeNone" 
-							data-bgfit="100" 
-							data-bgfitend="130" 
+						<img
+							src="img/background/banner-bg.jpg"
+							data-bgposition="center center"
+							data-kenburns="on"
+							data-duration="20000"
+							data-ease="Linear.easeNone"
+							data-bgfit="100"
+							data-bgfitend="130"
 							data-bgpositionend="center center"
 							alt="slider image">
-						<div 
+						<div
 							class="caption sfb tp-resizeme text-center"
-							data-x="0" 
-							data-y="220" 
-							data-speed="700" 
-							data-start="1000"  
+							data-x="0"
+							data-y="220"
+							data-speed="700"
+							data-start="1000"
 							data-easing="easeOutBack">
 
 							<div class="date">
@@ -150,33 +150,33 @@ div.panel.show {
 							</div>
 						</div>
 
-						<div 
+						<div
 							class="caption sfb tp-resizeme"
-							data-x="0" 
-							data-y="290" 
-							data-speed="700" 
-							data-start="1500"  
+							data-x="0"
+							data-y="290"
+							data-speed="700"
+							data-start="1500"
 							data-easing="easeOutBack">
 
 							<h1>Aqui se instanciara un arreglo de los eventos para poner el Nombre de la ultima Feria de la ciencias registrada</h1>
-						</div>					
-						<div 
+						</div>
+						<div
 							class="caption sfb tp-resizeme input-box"
-							data-x="0" 
-							data-y="370" 
-							data-speed="700" 
-							data-start="2200"  
+							data-x="0"
+							data-y="370"
+							data-speed="700"
+							data-start="2200"
 							data-easing="easeOutBack">
 
 							<ul class="count-down"></ul>
 						</div>
 
-						<ul 
+						<ul
 							class="caption sfb tp-resizeme banner-buttons"
-							data-x="0" 
-							data-y="530" 
-							data-speed="700" 
-							data-start="2500"  
+							data-x="0"
+							data-y="530"
+							data-speed="700"
+							data-start="2500"
 							data-easing="easeOutBack">
 
 							<li class="scrollToLink"><a href="#register-now" class="colored hvr-bounce-to-right">Registrate Ahora</a></li>
@@ -184,51 +184,51 @@ div.panel.show {
 
 						</ul>
 					</li>
-					<li 
-						data-transition="fade" 
-						data-slotamount="7" 
-						class="slider-2 text-center gradient-overlay" 
+					<li
+						data-transition="fade"
+						data-slotamount="7"
+						class="slider-2 text-center gradient-overlay"
 						data-thumb="img/background/subscribe-section-bg.jpg"
 						data-title="EXPERIENCIA EN LA CUAL PUEDES CONFIAR">
 
-						<img 
-							src="img/background/subscribe-section-bg.jpg" 
-							data-bgposition="center center" 
-							data-kenburns="on" 
-							data-duration="20000" 
-							data-ease="Linear.easeNone" 
-							data-bgfit="100" 
-							data-bgfitend="130" 
+						<img
+							src="img/background/subscribe-section-bg.jpg"
+							data-bgposition="center center"
+							data-kenburns="on"
+							data-duration="20000"
+							data-ease="Linear.easeNone"
+							data-bgfit="100"
+							data-bgfitend="130"
 							data-bgpositionend="center center"
 							alt="slider image">
 
-						<div 
+						<div
 							class="caption sfb tp-resizeme text-center"
-							data-x="0" 
-							data-y="300" 
-							data-speed="700" 
-							data-start="1000"  
+							data-x="0"
+							data-y="300"
+							data-speed="700"
+							data-start="1000"
 							data-easing="easeOutBack">
 
 							<h1>DONT MISS THE EVENT</h1>
 						</div>
 
-						<div 
+						<div
 							class="caption sfb tp-resizeme"
-							data-x="0" 
-							data-y="370" 
-							data-speed="700" 
-							data-start="1500"  
+							data-x="0"
+							data-y="370"
+							data-speed="700"
+							data-start="1500"
 							data-easing="easeOutBack">
 
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, neque,  <br> nam? Sed at dolor, perferendis, quaerat, esse dignissimos praesentium unde dolore.</p>
 						</div>
-						<ul 
+						<ul
 							class="caption sfb tp-resizeme banner-buttons"
-							data-x="0" 
-							data-y="450" 
-							data-speed="700" 
-							data-start="2500"  
+							data-x="0"
+							data-y="450"
+							data-speed="700"
+							data-start="2500"
 							data-easing="easeOutBack">
 
 							<li class="scrollToLink"><button type="submit" class="colored hvr-bounce-to-right">Register Now</button></li>
@@ -236,30 +236,30 @@ div.panel.show {
 
 						</ul>
 					</li>
-					<li 
-						data-transition="fade" 
-						data-slotamount="7" 
-						class="slider-3 text-center gradient-overlay" 
+					<li
+						data-transition="fade"
+						data-slotamount="7"
+						class="slider-3 text-center gradient-overlay"
 						data-thumb="img/background/register-bg.jpg"
 						data-title="EXPERTISE YOU CAN TRUST">
 
-						<img 
-							src="img/background/register-bg.jpg" 
-							data-bgposition="center center" 
-							data-kenburns="on" 
-							data-duration="20000" 
-							data-ease="Linear.easeNone" 
-							data-bgfit="100" 
-							data-bgfitend="130" 
+						<img
+							src="img/background/register-bg.jpg"
+							data-bgposition="center center"
+							data-kenburns="on"
+							data-duration="20000"
+							data-ease="Linear.easeNone"
+							data-bgfit="100"
+							data-bgfitend="130"
 							data-bgpositionend="center center"
 							alt="slider image">
 
-						<div 
+						<div
 							class="caption sfb tp-resizeme text-center"
-							data-x="0" 
-							data-y="220" 
-							data-speed="700" 
-							data-start="1000"  
+							data-x="0"
+							data-y="220"
+							data-speed="700"
+							data-start="1000"
 							data-easing="easeOutBack">
 
 							<div class="date">
@@ -267,22 +267,22 @@ div.panel.show {
 							</div>
 						</div>
 
-						<div 
+						<div
 							class="caption sfb tp-resizeme"
-							data-x="0" 
-							data-y="290" 
-							data-speed="700" 
-							data-start="1500"  
+							data-x="0"
+							data-y="290"
+							data-speed="700"
+							data-start="1500"
 							data-easing="easeOutBack">
 
 							<h1>FRONT END DEVELOPER CONFERENCE</h1>
-						</div>					
-						<div 
+						</div>
+						<div
 							class="caption sfb tp-resizeme input-box"
-							data-x="0" 
-							data-y="370" 
-							data-speed="700" 
-							data-start="2200"  
+							data-x="0"
+							data-y="370"
+							data-speed="700"
+							data-start="2200"
 							data-easing="easeOutBack">
 
 							<ul>
@@ -292,12 +292,12 @@ div.panel.show {
 							</ul>
 						</div>
 
-						<ul 
+						<ul
 							class="caption sfb tp-resizeme banner-buttons"
-							data-x="0" 
-							data-y="450" 
-							data-speed="700" 
-							data-start="2500"  
+							data-x="0"
+							data-y="450"
+							data-speed="700"
+							data-start="2500"
 							data-easing="easeOutBack">
 
 							<li class="scrollToLink"><button type="submit" class="colored hvr-bounce-to-right">Register Now</button></li>
@@ -344,7 +344,7 @@ div.panel.show {
 	</section>
 	<!-- /#information-bar -->
 
-	
+
 	<!-- #upcoming-event -->
 	<section id="upcoming-event">
 		<div class="container">
@@ -355,14 +355,10 @@ div.panel.show {
 						<p>OBSERVA TODOS NUESTROS EVENTOS Y SUBSCRÍBETE AL QUE SE ADE TU MAYOR INTERÉS</p>
 					</div>
 				</div>
-				<div class="col-lg-5 col-md-5 col-sm-5">
-					<form action="#" class="pull-right">
-						<input type="text" placeholder="Search Event"> <button type="submit"><i class="fa fa-search"></i></button>
-					</form>
-				</div>
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
+					<!--
 					<div class="tab-title-wrap">
 						<ul class="clearfix">
 							<li class="filter active" data-filter="all"><span>All Event</span></li>
@@ -376,7 +372,63 @@ div.panel.show {
 							<li class="filter" data-filter=".jun-01"><span>June 01</span></li>
 						</ul>
 					</div>
-					<div class="tab-content-wrap row">
+					-->
+					<div id="mis_eventos" class="tab-content-wrap row">
+						<?php
+						//se despliegan todos los eventos en la pagina principal
+							$servername = "localhost";
+							$username = "root";
+							$password = "";
+							$dbname = "evento";
+
+							// Create connection
+							$conn = new mysqli($servername, $username, $password, $dbname);
+							// Check connection
+							if ($conn->connect_error)
+							{
+							    //echo ("Connection failed: " . $conn->connect_error);
+							}
+							else
+							{
+								//echo "Connection succesful";
+							}
+
+							$sql = "SELECT titulo_e,FechIniEv,ubicacion,costo FROM evento";
+							$result = $conn->query($sql);
+
+							if ($result->num_rows > 0)
+							{
+							    // output data of each row
+							    while($row = $result->fetch_assoc())
+								{
+							        //echo "titulo_e: " . $row["titulo_e"]. " - FechIniEv: " . $row["FechIniEv"] . " - ubicacion: " . $row["ubicacion"] ." - costo: " . $row["costo"] ."<br>";
+									echo
+									("
+										<div class=\"col-lg-3 col-md-4 col-sm-6 mix hvr-float-shadow wow fadeIn\">
+											<div class=\"img-holder\"><img src=\"img/upcoming-event/1.jpg\" alt=\"\"></div>
+											<div class=\"content-wrap\">
+												<img src=\"img/upcoming-event/author.png\" alt=\"\" class=\"author-img\">
+												<div class=\"meta\">
+													<ul>
+														<li><span><i class=\"fa fa-clock-o\"></i>" . $row["FechIniEv"] . "</span></li>
+														<li><span><i class=\"fa fa-map-marker\"></i>".$row["ubicacion"]."</span></li>
+													</ul>
+												</div>
+												<h3>".$row["titulo_e"]."</h3>
+												<p>"."Costo: \$".$row["costo"]."</p>
+												<a class=\"read-more\" href=\"#\">Suscribirse<i class=\"fa fa-angle-right\"></i></a>
+											</div>
+										</div>
+									");
+							    }
+							}
+							else
+							{
+							    echo "0 results";
+							}
+							$conn->close();
+						?>
+						<!--
 						<div class="col-lg-3 col-md-4 col-sm-6 mix april-14 april-22 hvr-float-shadow wow fadeIn">
 							<div class="img-holder"><img src="img/upcoming-event/1.jpg" alt=""></div>
 							<div class="content-wrap">
@@ -497,6 +549,7 @@ div.panel.show {
 								<a class="read-more" href="#">read more<i class="fa fa-angle-right"></i></a>
 							</div>
 						</div>
+					-->
 					</div>
 				</div>
 			</div>
@@ -516,7 +569,7 @@ div.panel.show {
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-					
+
 
 						<h1>Selecciona el Tipo de usuario</h1>
 						<br>
@@ -552,7 +605,7 @@ div.panel.show {
 							<div class="input-wrap">
 								<label><img src="img/icons/email.png" alt="">CODIGO POSTAL</label>
 								<input type="text" name="cpa" placeholder="Código Postal" onkeypress="return valida(event)" size="5" maxlength="5" minlength="5" required>
-							
+
 							</div>
 						</li>
 						<li>
@@ -592,18 +645,18 @@ div.panel.show {
 							</div>
 						</li>
 						<li>
-							
+
 								<label><img src="img/icons/name.png" alt="">SELECCIONA TUS INTERESES</label>
 								<label><input type="checkbox" name="op1" value="rap">Option 1</label>
 								<label><input type="checkbox" value="">Option 2</label>
-								<label><input type="checkbox" value="">Option 3</label>								
-							
+								<label><input type="checkbox" value="">Option 3</label>
+
 						</li>
 
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/password.png" alt="">CONTRASEÑA</label>
-								<input type="password" name="password" placeholder="PASSWORD" required><BR><BR> 
+								<input type="password" name="password" placeholder="PASSWORD" required><BR><BR>
 							</div>
 						</li>
 
@@ -648,7 +701,7 @@ div.panel.show {
 							<div class="input-wrap">
 								<label><img src="img/icons/email.png" alt="">CODIGO POSTAL</label>
 								<input type="text" name="cpm" placeholder="Código Postal" onkeypress="return valida(event)" size="5" maxlength="5" minlength="5" required>
-							
+
 							</div>
 						</li>
 						<li>
@@ -694,18 +747,18 @@ div.panel.show {
 							</div>
 						</li>
 						<li>
-							
+
 								<label><img src="img/icons/name.png" alt="">SELECCIONA TUS INTERESES</label>
 								<label><input type="checkbox" value="" name="interesm">Option 1</label>
 								<label><input type="checkbox" value="">Option 2</label>
-								<label><input type="checkbox" value="">Option 3</label>								
-							
+								<label><input type="checkbox" value="">Option 3</label>
+
 						</li>
 
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/password.png" alt="">CONTRASEÑA</label>
-								<input type="password" name="passm" placeholder="PASSWORD" required><BR><BR> 
+								<input type="password" name="passm" placeholder="PASSWORD" required><BR><BR>
 							</div>
 						</li>
 
@@ -750,7 +803,7 @@ div.panel.show {
 							<div class="input-wrap">
 								<label><img src="img/icons/email.png" alt="">CODIGO POSTAL</label>
 								<input type="text"  name="cpc" placeholder="Código Postal" onkeypress="return valida(event)" size="5" maxlength="5" minlength="5" required>
-							
+
 							</div>
 						</li>
 						<li>
@@ -789,20 +842,20 @@ div.panel.show {
 								<input type="text" placeholder="Ingresa tu empresa"  name="empresac" required>
 							</div>
 						</li>
-						
+
 						<li>
-							
+
 								<label><img src="img/icons/name.png" alt="">SELECCIONA TUS INTERESES</label>
 								<label><input type="checkbox"  name="interesc" value="">Option 1</label>
 								<label><input type="checkbox" value="">Option 2</label>
-								<label><input type="checkbox" value="">Option 3</label>								
-							
+								<label><input type="checkbox" value="">Option 3</label>
+
 						</li>
 
 						<li>
 							<div class="input-wrap">
 								<label><img src="img/icons/password.png" alt="">CONTRASEÑA</label>
-								<input type="password" placeholder="PASSWORD"  name="passc" required><BR><BR> 
+								<input type="password" placeholder="PASSWORD"  name="passc" required><BR><BR>
 							</div>
 						</li>
 
@@ -814,11 +867,11 @@ div.panel.show {
 						</ul>
 						</form>
 								</div>
-						
-					
 
-						
-					
+
+
+
+
 				</div>
 
 			</div>
@@ -829,19 +882,19 @@ div.panel.show {
 
 
 	<!-- #event-speakers -->
-	
+
 	<!-- /#event-speakers -->
 
 	<!-- #app-section -->
-	
+
 	<!-- /#app-section -->
 
 	<!-- #pricing-table -->
-	
+
 	<!-- /#pricing-table -->
 
 	<!-- #testimonials -->
-	
+
 	<!-- /#testimonials -->
 
 	<!-- #gallery -->
@@ -886,12 +939,12 @@ div.panel.show {
 	<!-- /#gallery -->
 
 	<!-- #blog -->
-	
+
 	<!-- /#blog -->
-	
+
 
 	<!-- #contact -->
-	
+
 	<!-- /#contact -->
 
 	<!-- #event-sponsor -->
@@ -927,7 +980,7 @@ div.panel.show {
 	</section>
 	<!-- /#event-sponsor -->
 
-	<!-- #subscribe-newsletter 
+	<!-- #subscribe-newsletter
 	<section id="subscribe-newsletter">
 		<div class="container">
 			<div class="gradient-overlay">
@@ -1010,21 +1063,21 @@ div.panel.show {
 		</div>
 	</footer>
 	<!-- /footer -->
-	
+
 	<!-- #bottom-bar -->
 	<section id="bottom-bar">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<p>&copy; 2015 <a href="index-2.html">EVENT TIME</a> ALL RIGHTS RESERVED</p>
+					<p>&copy; 2015 <a href="#">EVENT TIME</a> ALL RIGHTS RESERVED</p>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!-- /#bottom-bar -->
 
-	
-	
+
+
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery.themepunch.tools.min.js"></script>
 	<script src="js/jquery.themepunch.revolution.min.js"></script>
