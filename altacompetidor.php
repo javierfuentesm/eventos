@@ -31,6 +31,7 @@
     $interes=$_POST["interesc"];
     $contrasena=$_POST["passc"];
     $direccion=$_POST["direccionC"];
+	 $socio=$_POST["socio"];
 
 
 
@@ -47,9 +48,26 @@
      $result = $mi_bd3->query($sql2);
      $row=mysqli_fetch_assoc($result);
      $resultado= $row["id_part"];
+	 
+	  $tabla3="socio";
+    $columnas3=array("descuento","id_part");
+    $valores3=array(array(15,"'$resultado'"));
+    $mi_bd2->insertar($tabla3,$columnas3,$valores3);
+	 
+	  
+$sql3="select num_socio from socio order by num_socio desc limit 1";    
+     $result2 = $mi_bd3->query($sql3);
+     $row2=mysqli_fetch_assoc($result2);
+     $resultado2= $row2["num_socio"];
+	
+	 
+	
+	 
+	 
+	 
     $tabla2="competidor";
-    $columnas2=array("id_part","rfc","empresa");
-    $valores2=array(array($resultado,"'$rfc'","'$empresa'"));
+    $columnas2=array("id_part","rfc","empresa","socio");
+    $valores2=array(array($resultado,"'$rfc'","'$empresa'",$resultado2));
     $mi_bd2->insertar($tabla2,$columnas2,$valores2);
      
   }
@@ -58,7 +76,7 @@
      
 echo"
 <div class='container'><div class='alert alert-success alert-dismissable fade in'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Success!</strong> Se realizaó con éxito el registro</div></div>";
- header("Refresh:0; url=index.html");
+ header("Refresh:0; url=index.php");
 }else {
    echo"
 <div class='container'><div class='alert alert-warning alert-dismissable fade in'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Success!</strong> Ha habido un error</div></div>";

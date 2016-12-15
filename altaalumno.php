@@ -32,6 +32,7 @@
     $interes=$_POST["op1"];
     $contrasena=$_POST["password"];
     $direccion=$_POST["direccion"];
+	 $socio=$_POST["socio"];
 
 
 
@@ -39,7 +40,7 @@
     $columnas= array("password","nombre","apellidoP","apellidoM","edad","tel","direccion","CP","cel","email");
     $valores= array(array("'$contrasena'","'$nombre'","'$apellidoP'","'$apellidoM'",$edad,"'$tel'","'$direccion'",$CP,"'$cel'","'$email'"));
     $mi_bd->insertar($tabla, $columnas, $valores );
-   //echo $mi_bd->resultado(); //imprimir resultado de la 
+   echo $mi_bd->resultado(); //imprimir resultado de la 
 
 
       if ($mi_bd->resultado()){
@@ -48,10 +49,30 @@
      $result = $mi_bd3->query($sql2);
      $row=mysqli_fetch_assoc($result);
      $resultado= $row["id_part"];
+	 
+	 
+	 $tabla3="socio";
+    $columnas3=array("descuento","id_part");
+    $valores3=array(array(15,"'$resultado'"));
+    $mi_bd2->insertar($tabla3,$columnas3,$valores3);
+	
+	$sql3="select num_socio from socio order by num_socio desc limit 1";    
+     $result2 = $mi_bd3->query($sql3);
+     $row2=mysqli_fetch_assoc($result2);
+     $resultado2= $row2["num_socio"];
+	
+	 
     $tabla2="alumno";
-    $columnas2=array("id_part","boleta","escuela","interes");
-    $valores2=array(array($resultado,"'$boleta'","'escuela'","'interes'"));
+    $columnas2=array("id_part","boleta","escuela","interes","socio");
+    $valores2=array(array($resultado,"'$boleta'","'$escuela'","'$interes'",$resultado2));
     $mi_bd2->insertar($tabla2,$columnas2,$valores2);
+	
+	
+	 echo $mi_bd2->resultado();
+	
+	
+	
+	
      
   }
 
@@ -59,7 +80,7 @@
      
 echo"
 <div class='container'><div class='alert alert-success alert-dismissable fade in'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Success!</strong> Se realizaó con éxito el registro</div></div>";
- header("Refresh:0; url=index.html");
+ header("Refresh:0; url=index.php");
 }else {
    echo"
 <div class='container'><div class='alert alert-warning alert-dismissable fade in'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Success!</strong> Ha habido un error</div></div>";

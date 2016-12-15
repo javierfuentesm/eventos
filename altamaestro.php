@@ -31,6 +31,7 @@
     $interes=$_POST["interesm"];
     $contrasena=$_POST["passm"];
     $direccion=$_POST["direccionm"];
+	 $socio=$_POST["socio"];
 
 
 
@@ -54,9 +55,24 @@
          $row=mysqli_fetch_assoc($result);
          $resultado= $row["id_part"];
         //echo $resultado;
+		
+		  $tabla3="socio";
+    $columnas3=array("descuento","id_part");
+    $valores3=array(array(15,"'$resultado'"));
+    $mi_bd2->insertar($tabla3,$columnas3,$valores3);
+	
+	$sql3="select num_socio from socio order by num_socio desc limit 1";    
+     $result2 = $mi_bd3->query($sql3);
+     $row2=mysqli_fetch_assoc($result2);
+     $resultado2= $row2["num_socio"];
+	
+		
+		
+		
+		
          $tabla2="maestro";      
-         $columnas2=array("id_part","num_empleado","escuela","interes","especialidad");    
-         $valores2=array(array($row["id_part"],$numempleado,"'$escuela'","'$interes'","'$especialidad2'"));   
+         $columnas2=array("id_part","num_empleado","escuela","interes","especialidad","socio");    
+         $valores2=array(array($row["id_part"],$numempleado,"'$escuela'","'$interes'","'$especialidad2'",$resultado2));   
          $mi_bd2->insertar($tabla2,$columnas2,$valores2);
    
       //echo $mi_bd2->resultado();
@@ -72,7 +88,7 @@ if ($mi_bd->resultado()||$mi_bd2->resultado()) {
      
 echo"
 <div class='container'><div class='alert alert-success alert-dismissable fade in'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Success!</strong> Se realizó con éxito el registro</div></div>";
-header("Refresh:0; url=index.html");
+header("Refresh:0; url=index.php");
 }else {
    echo"
 </div class='container'><div class='alert alert-warning alert-dismissable fade in'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Success!</strong> Ha habido un error</div></div>";

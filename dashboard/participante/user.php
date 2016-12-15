@@ -1,4 +1,8 @@
-<?php session_start(); 
+<?php 
+		if(!isset($_SESSION['email']) && empty($_SESSION['email']))
+		{
+			session_start(); 
+		}
 include("conexion.php");
 ?>
 <html lang="en">
@@ -21,38 +25,26 @@ include("conexion.php");
         <div class="sidebar-wrapper">
             <div class="logo">
                 <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
+                    Eventos
                 </a>
             </div>
             <ul class="nav">
-                <li>
-                    <a href="dashboard.html">
-                        <i class="pe-7s-graph"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
                 <li class="active">
-                    <a href="user.html">
+                    <a href="user.php">
                         <i class="pe-7s-user"></i>
                         <p>Perfil de Usuario</p>
                     </a>
                 </li>
                 <li>
-                    <a href="table.html">
+                    <a href="eventopage.html">
                         <i class="pe-7s-note2"></i>
-                        <p>Usuarios</p>
+                        <p>Eventos registrados</p>
                     </a>
                 </li>
                 <li>
-                    <a href="icons.html">
-                        <i class="pe-7s-science"></i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="maps.html">
+                    <a href="../../index.php">
                         <i class="pe-7s-map-marker"></i>
-                        <p>Eventos</p>
+                        <p>Registrar en Eventos</p>
                     </a>
                 </li>
             </ul>
@@ -72,13 +64,9 @@ include("conexion.php");
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
+
                         <li>
-                           <a href="">
-                               Cuenta
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            <a href="cerrar_sesion.php">
                                 Cerrar Sesion
                             </a>
                         </li>
@@ -148,7 +136,6 @@ include("conexion.php");
                                                     recuperarDatos6();
                                                 ?>
                                             </div>
-                                        </div>
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>

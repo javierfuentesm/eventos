@@ -21,18 +21,12 @@ include("conexion.php");
         <div class="sidebar-wrapper">
             <div class="logo">
                 <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
+                    Evento
                 </a>
             </div>
             <ul class="nav">
-                <li>
-                    <a href="dashboard.html">
-                        <i class="pe-7s-graph"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
                 <li class="active">
-                    <a href="user.html">
+                    <a href="user.php">
                         <i class="pe-7s-user"></i>
                         <p>Perfil de Usuario</p>
                     </a>
@@ -44,13 +38,7 @@ include("conexion.php");
                     </a>
                 </li>
                 <li>
-                    <a href="icons.html">
-                        <i class="pe-7s-science"></i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="maps.html">
+                    <a href="eventopage.html">
                         <i class="pe-7s-map-marker"></i>
                         <p>Eventos</p>
                     </a>
@@ -72,14 +60,10 @@ include("conexion.php");
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
+   
                         <li>
-                           <a href="">
-                               Cuenta
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Cerrar Sesion
+                            <a href="cerrar_sesion.php">
+                                Cerrar sesión
                             </a>
                         </li>
                     </ul>
