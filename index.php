@@ -86,26 +86,12 @@ div.panel.show {
 						<li class="current scrollToLink dropdown">
 							<a href="#banner">Inicio</a>
 						</li>
-						<li class="deadlink">
-							<a href="#">Páginas</a>
-							<ul class="submenu">
-								<li><a href="about-us.html">Acerca de Nosotros</a></li>
-								<li class="dropdown">
-									<a href="services.html">Servicios</a>
-									<!--
-									<ul class="submenu">
-										<li class="deadlink"><a href="#">Third Level Menu</a></li>
-									</ul>
-									-->
-								</li>
-							</ul>
-						</li>
-						<li class="scrollToLink"><a href="#upcoming-event">EVENTO</a></li>
-						<li class="scrollToLink"><a href="#event-speakers">DISCURSANTE</a></li>
-						<li class="scrollToLink"><a href="#pricing-table">PRECIOS</a></li>
-						<li class="scrollToLink"><a href="#gallery">GALERIA</a></li>
 
-						<li class="scrollToLink"><a href="#contact">CONTACTO</a></li>
+						<li class="scrollToLink"><a href="#upcoming-event">EVENTOS</a></li>
+						<li class="scrollToLink"><a href="#register-now">REGISTRATE</a></li>
+						<li class="scrollToLink"><a href="index2.html">INICIA SESION</a></li>
+
+
 
 					</ul>
 				</nav>
@@ -146,7 +132,53 @@ div.panel.show {
 							data-easing="easeOutBack">
 
 							<div class="date">
-								Puede jalar la fecha del ultimo evento registrado
+
+
+								<?php
+								//se despliegan la fecha del ultimo evento registrado
+									$servername = "localhost";
+									$username = "root";
+									$password = "";
+									$dbname = "evento";
+
+									// Create connection
+									$conn = new mysqli($servername, $username, $password, $dbname);
+									// Check connection
+									if ($conn->connect_error)
+									{
+										//echo ("Connection failed: " . $conn->connect_error);
+									}
+									else
+									{
+										//echo "Connection succesful";
+									}
+
+									$sql = "SELECT titulo_e,FechIniEv,ubicacion,costo FROM evento";
+									$result = $conn->query($sql);
+
+									if ($result->num_rows > 0)
+									{
+										$i=0;
+										// output data of each row
+										while($row = $result->fetch_assoc())
+										{
+											//echo "titulo_e: " . $row["titulo_e"]. " - FechIniEv: " . $row["FechIniEv"] . " - ubicacion: " . $row["ubicacion"] ." - costo: " . $row["costo"] ."<br>";
+											$i+=1;;
+											if($i==$result->num_rows)
+											{
+												echo "El evento iniciará el: " . $row["FechIniEv"] . "<br>";
+											}
+										}
+									}
+									else
+									{
+										//echo "0 results";
+									}
+									$conn->close();
+								?>
+
+
+
 							</div>
 						</div>
 
@@ -158,8 +190,55 @@ div.panel.show {
 							data-start="1500"
 							data-easing="easeOutBack">
 
-							<h1>Aqui se instanciara un arreglo de los eventos para poner el Nombre de la ultima Feria de la ciencias registrada</h1>
+							<h1>
+
+																<?php
+																//se despliegan la fecha del ultimo evento registrado
+																	$servername = "localhost";
+																	$username = "root";
+																	$password = "";
+																	$dbname = "evento";
+
+																	// Create connection
+																	$conn = new mysqli($servername, $username, $password, $dbname);
+																	// Check connection
+																	if ($conn->connect_error)
+																	{
+																		//echo ("Connection failed: " . $conn->connect_error);
+																	}
+																	else
+																	{
+																		//echo "Connection succesful";
+																	}
+
+																	$sql = "SELECT titulo_e,FechIniEv,lugar,costo FROM evento";
+																	$result = $conn->query($sql);
+
+																	if ($result->num_rows > 0)
+																	{
+																		$i=0;
+																		// output data of each row
+																		while($row = $result->fetch_assoc())
+																		{
+																			//echo "titulo_e: " . $row["titulo_e"]. " - FechIniEv: " . $row["FechIniEv"] . " - ubicacion: " . $row["ubicacion"] ." - costo: " . $row["costo"] ."<br>";
+																			$i+=1;;
+																			if($i==$result->num_rows)
+																			{
+																				echo "Evento: " . $row["titulo_e"] . "<br>";
+																				echo "Lugar: " . $row["lugar"] . "<br>";
+
+																			}
+																		}
+																	}
+																	else
+																	{
+																		//echo "0 results";
+																	}
+																	$conn->close();
+																?>
+							</h1>
 						</div>
+<!--
 						<div
 							class="caption sfb tp-resizeme input-box"
 							data-x="0"
@@ -170,7 +249,7 @@ div.panel.show {
 
 							<ul class="count-down"></ul>
 						</div>
-
+-->
 						<ul
 							class="caption sfb tp-resizeme banner-buttons"
 							data-x="0"
@@ -184,6 +263,7 @@ div.panel.show {
 
 						</ul>
 					</li>
+
 					<li
 						data-transition="fade"
 						data-slotamount="7"
@@ -210,7 +290,8 @@ div.panel.show {
 							data-start="1000"
 							data-easing="easeOutBack">
 
-							<h1>DONT MISS THE EVENT</h1>
+							<h1>NO TE LO PIERDAS<br/>
+							</h1>
 						</div>
 
 						<div
@@ -221,7 +302,55 @@ div.panel.show {
 							data-start="1500"
 							data-easing="easeOutBack">
 
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, neque,  <br> nam? Sed at dolor, perferendis, quaerat, esse dignissimos praesentium unde dolore.</p>
+							<p>
+
+
+								<?php
+								//se despliegan la fecha del ultimo evento registrado
+									$servername = "localhost";
+									$username = "root";
+									$password = "";
+									$dbname = "evento";
+
+									// Create connection
+									$conn = new mysqli($servername, $username, $password, $dbname);
+									// Check connection
+									if ($conn->connect_error)
+									{
+										//echo ("Connection failed: " . $conn->connect_error);
+									}
+									else
+									{
+										//echo "Connection succesful";
+									}
+
+									$sql = "SELECT titulo_e,FechIniEv,lugar,costo FROM evento";
+									$result = $conn->query($sql);
+
+									if ($result->num_rows > 0)
+									{
+										$i=0;
+										// output data of each row
+										while($row = $result->fetch_assoc())
+										{
+											//echo "titulo_e: " . $row["titulo_e"]. " - FechIniEv: " . $row["FechIniEv"] . " - ubicacion: " . $row["ubicacion"] ." - costo: " . $row["costo"] ."<br>";
+											$i+=1;;
+											if($i==1)
+											{
+												echo "" . $row["titulo_e"] . "<br>";
+												echo "" . $row["lugar"] . "<br>";
+												echo "" . $row["FechIniEv"] . "<br>";
+											}
+										}
+									}
+									else
+									{
+										//echo "0 results";
+									}
+									$conn->close();
+								?>
+
+							</p>
 						</div>
 						<ul
 							class="caption sfb tp-resizeme banner-buttons"
@@ -231,81 +360,11 @@ div.panel.show {
 							data-start="2500"
 							data-easing="easeOutBack">
 
-							<li class="scrollToLink"><button type="submit" class="colored hvr-bounce-to-right">Register Now</button></li>
-							<li class="scrollToLink"><a href="#upcoming-event" class="bordered hvr-bounce-to-right">Watch Video</a></li>
+							<li class="scrollToLink"><a href="#register-now" class="bordered hvr-bounce-to-right">Registrate</li>
+							<li class="scrollToLink"><a href="#upcoming-event" class="bordered hvr-bounce-to-right">Ver Más</a></li>
 
 						</ul>
 					</li>
-					<li
-						data-transition="fade"
-						data-slotamount="7"
-						class="slider-3 text-center gradient-overlay"
-						data-thumb="img/background/register-bg.jpg"
-						data-title="EXPERTISE YOU CAN TRUST">
-
-						<img
-							src="img/background/register-bg.jpg"
-							data-bgposition="center center"
-							data-kenburns="on"
-							data-duration="20000"
-							data-ease="Linear.easeNone"
-							data-bgfit="100"
-							data-bgfitend="130"
-							data-bgpositionend="center center"
-							alt="slider image">
-
-						<div
-							class="caption sfb tp-resizeme text-center"
-							data-x="0"
-							data-y="220"
-							data-speed="700"
-							data-start="1000"
-							data-easing="easeOutBack">
-
-							<div class="date">
-								December 31, 2015 23:59pm
-							</div>
-						</div>
-
-						<div
-							class="caption sfb tp-resizeme"
-							data-x="0"
-							data-y="290"
-							data-speed="700"
-							data-start="1500"
-							data-easing="easeOutBack">
-
-							<h1>FRONT END DEVELOPER CONFERENCE</h1>
-						</div>
-						<div
-							class="caption sfb tp-resizeme input-box"
-							data-x="0"
-							data-y="370"
-							data-speed="700"
-							data-start="2200"
-							data-easing="easeOutBack">
-
-							<ul>
-								<li><span><input type="text" placeholder="Your Name"></span></li>
-								<li><span><input type="text" placeholder="Your Email"></span></li>
-								<li><span><input type="text" placeholder="Your Phone"></span></li>
-							</ul>
-						</div>
-
-						<ul
-							class="caption sfb tp-resizeme banner-buttons"
-							data-x="0"
-							data-y="450"
-							data-speed="700"
-							data-start="2500"
-							data-easing="easeOutBack">
-
-							<li class="scrollToLink"><button type="submit" class="colored hvr-bounce-to-right">Register Now</button></li>
-							<li class="scrollToLink"><a href="#upcoming-event" class="bordered hvr-bounce-to-right">Watch Video</a></li>
-
-						</ul>
-					</li>
-
 				</ul>
 			</div>
 		</div>
@@ -318,19 +377,19 @@ div.panel.show {
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 					<ul>
 						<li><span class="img-holder"><img src="img/icons/1.png" alt=""></span></li>
-						<li><span><b>México</b> Contador de localizaciones</span></li>
+						<li><span><b>México</b> Localizaciones</span></li>
 					</ul>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 					<ul>
 						<li><span class="img-holder"><img src="img/icons/2.png" alt=""></span></li>
-						<li><span><b>Patrocinador</b> Contador de Patrocinadores</span></li>
+						<li><span><b>Tú</b> Patrocinadores</span></li>
 					</ul>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 					<ul>
 						<li><span class="img-holder"><img src="img/icons/3.png" alt=""></span></li>
-						<li><span><b>25+ Disucrsantes</b> Contador de Disucrsantes</span></li>
+						<li><span><b>Disucrsantes</b></span></li>
 					</ul>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
@@ -416,7 +475,7 @@ div.panel.show {
 												</div>
 												<h3>".$row["titulo_e"]."</h3>
 												<p>"."Costo: \$".$row["costo"]."</p>
-												<a class=\"read-more\" href=\"#\">Suscribirse<i class=\"fa fa-angle-right\"></i></a>
+												<a class=\"read-more \" href=\"#register-now\">Suscribirse<i class=\"fa fa-angle-right\"></i></a>
 											</div>
 										</div>
 									");
@@ -428,128 +487,6 @@ div.panel.show {
 							}
 							$conn->close();
 						?>
-						<!--
-						<div class="col-lg-3 col-md-4 col-sm-6 mix april-14 april-22 hvr-float-shadow wow fadeIn">
-							<div class="img-holder"><img src="img/upcoming-event/1.jpg" alt=""></div>
-							<div class="content-wrap">
-								<img src="img/upcoming-event/author.png" alt="" class="author-img">
-								<div class="meta">
-									<ul>
-										<li><span><i class="fa fa-clock-o"></i>22 April, 2015</span></li>
-										<li><span><i class="fa fa-map-marker"></i>California</span></li>
-									</ul>
-								</div>
-								<h3>Event Name</h3>
-								<p>Lorem Ipsum is simply dummy text of the printing [...]</p>
-								<a class="read-more" href="#">read more<i class="fa fa-angle-right"></i></a>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6 mix april-28 april-14 hvr-float-shadow wow fadeIn" data-wow-delay=".3s">
-							<div class="img-holder"><img src="img/upcoming-event/2.jpg" alt=""></div>
-							<div class="content-wrap">
-								<img src="img/upcoming-event/author.png" alt="" class="author-img">
-								<div class="meta">
-									<ul>
-										<li><span><i class="fa fa-clock-o"></i>28 April, 2015</span></li>
-										<li><span><i class="fa fa-map-marker"></i>California</span></li>
-									</ul>
-								</div>
-								<h3>Event Name</h3>
-								<p>Lorem Ipsum is simply dummy text of the printing [...]</p>
-								<a class="read-more" href="#">read more<i class="fa fa-angle-right"></i></a>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6 mix may-10 may-22 hvr-float-shadow wow fadeIn" data-wow-delay=".6s">
-							<div class="img-holder"><img src="img/upcoming-event/3.jpg" alt=""></div>
-							<div class="content-wrap">
-								<img src="img/upcoming-event/author.png" alt="" class="author-img">
-								<div class="meta">
-									<ul>
-										<li><span><i class="fa fa-clock-o"></i>10 May, 2015</span></li>
-										<li><span><i class="fa fa-map-marker"></i>California</span></li>
-									</ul>
-								</div>
-								<h3>Event Name</h3>
-								<p>Lorem Ipsum is simply dummy text of the printing [...]</p>
-								<a class="read-more" href="#">read more<i class="fa fa-angle-right"></i></a>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6 mix may-15 may-23 hvr-float-shadow wow fadeIn" data-wow-delay=".9s">
-							<div class="img-holder"><img src="img/upcoming-event/1.jpg" alt=""></div>
-							<div class="content-wrap">
-								<img src="img/upcoming-event/author.png" alt="" class="author-img">
-								<div class="meta">
-									<ul>
-										<li><span><i class="fa fa-clock-o"></i>15 May, 2015</span></li>
-										<li><span><i class="fa fa-map-marker"></i>California</span></li>
-									</ul>
-								</div>
-								<h3>Event Name</h3>
-								<p>Lorem Ipsum is simply dummy text of the printing [...]</p>
-								<a class="read-more" href="#">read more<i class="fa fa-angle-right"></i></a>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6 mix may-22 hvr-float-shadow">
-							<div class="img-holder"><img src="img/upcoming-event/1.jpg" alt=""></div>
-							<div class="content-wrap">
-								<img src="img/upcoming-event/author.png" alt="" class="author-img">
-								<div class="meta">
-									<ul>
-										<li><span><i class="fa fa-clock-o"></i>15 May, 2015</span></li>
-										<li><span><i class="fa fa-map-marker"></i>California</span></li>
-									</ul>
-								</div>
-								<h3>Event Name</h3>
-								<p>Lorem Ipsum is simply dummy text of the printing [...]</p>
-								<a class="read-more" href="#">read more<i class="fa fa-angle-right"></i></a>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6 mix may-23 hvr-float-shadow ">
-							<div class="img-holder"><img src="img/upcoming-event/1.jpg" alt=""></div>
-							<div class="content-wrap">
-								<img src="img/upcoming-event/author.png" alt="" class="author-img">
-								<div class="meta">
-									<ul>
-										<li><span><i class="fa fa-clock-o"></i>15 May, 2015</span></li>
-										<li><span><i class="fa fa-map-marker"></i>California</span></li>
-									</ul>
-								</div>
-								<h3>Event Name</h3>
-								<p>Lorem Ipsum is simply dummy text of the printing [...]</p>
-								<a class="read-more" href="#">read more<i class="fa fa-angle-right"></i></a>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6 mix jun-01 hvr-float-shadow">
-							<div class="img-holder"><img src="img/upcoming-event/1.jpg" alt=""></div>
-							<div class="content-wrap">
-								<img src="img/upcoming-event/author.png" alt="" class="author-img">
-								<div class="meta">
-									<ul>
-										<li><span><i class="fa fa-clock-o"></i>01 June, 2015</span></li>
-										<li><span><i class="fa fa-map-marker"></i>California</span></li>
-									</ul>
-								</div>
-								<h3>Event Name</h3>
-								<p>Lorem Ipsum is simply dummy text of the printing [...]</p>
-								<a class="read-more" href="#">read more<i class="fa fa-angle-right"></i></a>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6 mix april-22 hvr-float-shadow ">
-							<div class="img-holder"><img src="img/upcoming-event/1.jpg" alt=""></div>
-							<div class="content-wrap">
-								<img src="img/upcoming-event/author.png" alt="" class="author-img">
-								<div class="meta">
-									<ul>
-										<li><span><i class="fa fa-clock-o"></i>15 June, 2015</span></li>
-										<li><span><i class="fa fa-map-marker"></i>California</span></li>
-									</ul>
-								</div>
-								<h3>Event Name</h3>
-								<p>Lorem Ipsum is simply dummy text of the printing [...]</p>
-								<a class="read-more" href="#">read more<i class="fa fa-angle-right"></i></a>
-							</div>
-						</div>
-					-->
 					</div>
 				</div>
 			</div>
@@ -897,7 +834,7 @@ div.panel.show {
 
 	<!-- /#testimonials -->
 
-	<!-- #gallery -->
+	<!-- #gallery
 	<section id="gallery">
 		<div class="container-fluid">
 			<div class="row">
@@ -936,7 +873,7 @@ div.panel.show {
 			</div>
 		</div>
 	</section>
-	<!-- /#gallery -->
+	 /#gallery -->
 
 	<!-- #blog -->
 
@@ -947,7 +884,7 @@ div.panel.show {
 
 	<!-- /#contact -->
 
-	<!-- #event-sponsor -->
+	<!--
 	<section id="event-sponsor">
 		<div class="container">
 			<div class="row">
@@ -978,7 +915,7 @@ div.panel.show {
 			</div>
 		</div>
 	</section>
-	<!-- /#event-sponsor -->
+	 /#event-sponsor -->
 
 	<!-- #subscribe-newsletter
 	<section id="subscribe-newsletter">
@@ -1009,18 +946,10 @@ div.panel.show {
 				<!-- .footer-widget -->
 				<div class="col-lg-4 col-md-4 col-sm-6 footer-widget about-widget" >
 					<img src="img/resources/logo.png" alt="Footer Logo">
-					<p>Lorem Ipsum is simply dummy text of the <br> printing and typesetting industry. Lorem <br> <br> Ipsum has been the industry's standard <br> dummy text ever since th1500s, when an <br> unknown printer took a galley book.</p>
-					<div class="social-icons">
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="#"><i class="fa fa-google-plus"></i></a>
-						<a href="#"><i class="fa fa-linkedin"></i></a>
-						<a href="#"><i class="fa fa-pinterest"></i></a>
-					</div>
-				</div>
+					<p>Gestor de eventos <br>  <br> <br> .</p>
 				<!-- /.footer-widget -->
 
-				<!-- .footer-widget -->
+				<!-- .footer-widget
 				<div class="col-lg-2 col-md-2 col-sm-6 footer-widget menu-widget">
 					<h3>QUICK LINKS</h3>
 					<ul>
@@ -1036,14 +965,14 @@ div.panel.show {
 				</div>
 				<!-- /.footer-widget -->
 
-				<!-- .footer-widget -->
+				<!-- .footer-widget
 				<div class="col-lg-3 col-md-3 col-sm-6 footer-widget twitter-feed " >
 					<h3>Twitter Feed</h3>
 					<div class="twitter"></div>
 				</div>
 				<!-- /.footer-widget -->
 
-				<!-- .footer-widget -->
+				<!-- .footer-widget -
 				<div class="col-lg-3 col-md-3 col-sm-6 footer-widget" >
 					<h3>Footer Widget</h3>
 					<ul class="photo-gallery">
