@@ -59,10 +59,15 @@ div.panel {
 div.panel.show {
     display: block;
 }
+
 </style>
 </head>
 <body>
-
+	<?php
+		if(session_status()!=PHP_SESSION_ACTIVE)
+		session_start();
+		//$_SESSION["email"]="correo@gmail.com";
+	 ?>
 	<!-- .preloader -->
 	<div class="preloader"></div>
 	<!-- /.preloader -->
@@ -403,6 +408,7 @@ div.panel.show {
 	</section>
 	<!-- /#information-bar -->
 
+	<iframe style="display:none;" name="frame"></iframe>
 
 	<!-- #upcoming-event -->
 	<section id="upcoming-event">
@@ -431,7 +437,10 @@ div.panel.show {
 							<li class="filter" data-filter=".jun-01"><span>June 01</span></li>
 						</ul>
 					</div>
+					<iframe style="display:none;" name="frame" src="registrarse_evento.php"></iframe>
+
 					-->
+
 					<div id="mis_eventos" class="tab-content-wrap row">
 						<?php
 						//se despliegan todos los eventos en la pagina principal
@@ -452,33 +461,59 @@ div.panel.show {
 								//echo "Connection succesful";
 							}
 
-							$sql = "SELECT titulo_e,FechIniEv,ubicacion,costo FROM evento";
+							$sql = "SELECT titulo_e,FechIniEv,ubicacion,costo,id_evento FROM evento";
 							$result = $conn->query($sql);
 
 							if ($result->num_rows > 0)
 							{
+								$cadena="";
+								$i=0;
 							    // output data of each row
 							    while($row = $result->fetch_assoc())
 								{
+									$i+=1;
+
 							        //echo "titulo_e: " . $row["titulo_e"]. " - FechIniEv: " . $row["FechIniEv"] . " - ubicacion: " . $row["ubicacion"] ." - costo: " . $row["costo"] ."<br>";
-									echo
-									("
+									$cadena.=
+									"
 										<div class=\"col-lg-3 col-md-4 col-sm-6 mix hvr-float-shadow wow fadeIn\">
 											<div class=\"img-holder\"><img src=\"img/upcoming-event/1.jpg\" alt=\"\"></div>
 											<div class=\"content-wrap\">
 												<img src=\"img/upcoming-event/author.png\" alt=\"\" class=\"author-img\">
 												<div class=\"meta\">
 													<ul>
-														<li><span><i class=\"fa fa-clock-o\"></i>" . $row["FechIniEv"] . "</span></li>
+														<li><span><i class=\"fa fa-clock-o\"></i>" . $row["FechIniEv"] .
+														"___\$i=".$i.
+														"</span></li>
 														<li><span><i class=\"fa fa-map-marker\"></i>".$row["ubicacion"]."</span></li>
 													</ul>
 												</div>
 												<h3>".$row["titulo_e"]."</h3>
 												<p>"."Costo: \$".$row["costo"]."</p>
-												<a class=\"read-more \" href=\"#register-now\">Suscribirse<i class=\"fa fa-angle-right\"></i></a>
+												";
+												if(isset($_SESSION['email']) && !empty($_SESSION['email']))
+												{
+													$cadena.=
+													"
+													<form action=\"registrarse_evento.php\" method=\"post\" target=\"frame\">
+													<input style=\"display:none;\" type=\"hidden\" name=\"id_evento\" value=\"".$row["id_evento"]."\">
+													<input style=\"display:none;\" type=\"hidden\" name=\"email\" value=\"".$_SESSION["email"]."\">
+													<input type=\"submit\" value=\"Suscribirse\">
+													</form>
+													";
+												}
+												else
+												{
+													$cadena.=
+													"<a class=\"read-more \" href=\"#register-now\">Suscribirse<i class=\"fa fa-angle-right\"></i></a>";
+
+												}
+												//echo "i = ".$i.", isset(\$_SESSION['email']) && !empty(\$_SESSION['email']) = ".(isset($_SESSION['email']) && !empty($_SESSION['email']));
+												$cadena.="
 											</div>
 										</div>
-									");
+									";
+									echo $cadena;
 							    }
 							}
 							else
