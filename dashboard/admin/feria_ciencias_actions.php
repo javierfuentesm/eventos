@@ -48,7 +48,7 @@ try
 	else if($_GET["action"] == "update")
 	{
 		//Update record in database
-
+		$result = mysql_query("UPDATE feria_ciencias SET edadmin = '" . $_POST["edadmin"] . "', edadMax = '" . $_POST["edadMax"] ."' WHERE id_evento = " . $_POST["id_evento"] . ";");
 		//Return result to jTable
 		$jTableResult = array();
 		$jTableResult['Result'] = "OK";
@@ -58,6 +58,7 @@ try
 	else if($_GET["action"] == "delete")
 	{
 		//Delete from database
+		$result = mysql_query("DELETE FROM feria_ciencias WHERE id_evento = " . $_POST["id_evento"] . ";");
 
 		//Return result to jTable
 		$jTableResult = array();

@@ -47,7 +47,7 @@ try
 	else if($_GET["action"] == "update")
 	{
 		//Update record in database
-		$result = mysql_query("UPDATE concurso SET id_concurso = '" . $_POST["id_concurso"] . "', categoria = '" . $_POST["categoria"] ."', sala = '". $_POST["sala"]."', titulo_e ='".$_POST["titulo_e"]."', premio = '". $_POST["premio"]."' WHERE id_evento = " . $_POST["id_evento"] . ";");
+		$result = mysql_query("UPDATE concurso SET sala = '" . $_POST["sala"] ."',categoria = '".$_POST["categoria"]."',premio = '".$_POST["premio"]."' WHERE id_evento = " . $_POST["id_evento"] . ";");
 
 		//Return result to jTable
 		$jTableResult = array();

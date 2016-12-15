@@ -58,7 +58,7 @@ try
 	else if($_GET["action"] == "delete")
 	{
 		//Delete from database
-		$result = mysql_query("DELETE FROM evento WHERE id_evento = " . $_POST["id_evento"] . ";");
+		$result = mysql_query("DELETE FROM congreso WHERE id_evento = " . $_POST["id_evento"] . ";");
 
 		//Return result to jTable
 		$jTableResult = array();

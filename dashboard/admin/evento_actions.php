@@ -47,7 +47,7 @@ try
 	else if($_GET["action"] == "update")
 	{
 		//Update record in database
-		$result = mysql_query("UPDATE evento SET ISBN = '" . $_POST["ISBN"] . "', titulo_e = '" . $_POST["titulo_e"] ."', lugar = '". $_POST["lugar"]."', ubicacion = '". $_POST["ubicacion"]."', ubicacion_v = '". $_POST["ubicacion_v"]."', FechIniReg = '". $_POST["FechIniReg"]."', FechFinReg = '".$_POST["FechFinReg"]."', Fechtrbajo = '". $_POST["Fechtrbajo"]."', FechPago = '". $_POST["FechPago"]."', FechIniEv = '". $_POST["FechIniEv"]."', FechFinEv = '". $_POST["FechFinEv"]."', duracion = '". $_POST["duracion"]."' WHERE id_evento = " . $_POST["id_evento"] . ";");
+		$result = mysql_query("UPDATE evento SET ISBN = '" . $_POST["ISBN"] . "', titulo_e = '" . $_POST["titulo_e"] ."', lugar = '". $_POST["lugar"]."', ubicacion = '". $_POST["ubicacion"]."', ubicacion_v = '". $_POST["ubicacion_v"]."', FechIniReg = '". $_POST["FechIniReg"]."', FechFinReg = '".$_POST["FechFinReg"]."', FechPago = '". $_POST["FechPago"]."', FechIniEv = '". $_POST["FechIniEv"]."', FechFinEv = '". $_POST["FechFinEv"]."', duracion = '". $_POST["duracion"]."' WHERE id_evento = " . $_POST["id_evento"] . ";");
 
 		//Return result to jTable
 		$jTableResult = array();
