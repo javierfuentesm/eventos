@@ -1,26 +1,23 @@
-<?php
-	$usuario = $_POST['usuarioo'];
+<?php 	session_start();
+
+	$email = $_POST['usuarioo'];
 	$pass = $_POST['password'];
 	$tipo = $_POST['tipo'];
 
-	if(empty($usuario) || empty($pass)){
+	if(empty($email) || empty($pass)){
 		header("Location: index2.html");
 		exit();
 	}
-
 	mysql_connect('localhost','root','') or die ("Error al conectar" . mysql_error());
 	mysql_select_db('evento') or die ("Error al seleccionar la base de datos");
-
-
 	switch($tipo){
-
 		case 'A':
-		$result = mysql_query("SELECT * from administrador where nombre='" . $usuario . "'");
+		$result = mysql_query("SELECT * from administrador where email='" . $email . "'");
 		if($row = mysql_fetch_array($result)){
 			if($row['password'] == $pass) {
-				session_start();
-				$_SESSION['usuario'] = $usuario;
-				header("Location: dashboard/table.html");
+				$_SESSION['email'] = $email;
+				$_SESSION['tipo'] = $tipo;
+				header("Location: dashboard/admin/table.html");
 			}else{
 				header("Location: index2.html");
 				exit();
@@ -30,14 +27,13 @@
 			exit();
 		}
 		break;
-
 		case 'B':
-		$result = mysql_query("SELECT * from organizador where nombre='" . $usuario . "'");
+		$result = mysql_query("SELECT * from organizador where email='" . $email . "'");
 		if($row = mysql_fetch_array($result)){
 			if($row['password'] == $pass) {
-				session_start();
-				$_SESSION['usuario'] = $usuario;
-				header("Location: dashboard/user.html");
+				$_SESSION['email'] = $email;
+				$_SESSION['tipo'] = $tipo;
+				header("Location: dashboard/organizador/user.php");
 			}else{
 				header("Location: index2.html");
 				exit();
@@ -47,15 +43,13 @@
 			exit();
 		}
 		break;
-
-
 		case 'C':
-		$result = mysql_query("SELECT * from participante where nombre='" . $usuario . "'");
+		$result = mysql_query("SELECT * from participante where email='" . $email . "'");
 		if($row = mysql_fetch_array($result)){
 			if($row['password'] == $pass) {
-				session_start();
-				$_SESSION['usuario'] = $usuario;
-				header("Location: dashboard/user.html");
+				$_SESSION['email'] = $email;
+				$_SESSION['tipo'] = $tipo;
+				header("Location: dashboard/participante/user.html");
 			}else{
 				header("Location: index2.html");
 				exit();
@@ -65,14 +59,13 @@
 			exit();
 		}
 		break;
-
 		case 'D': 
-		$result = mysql_query("SELECT * from participante where nombre='" . $usuario . "'");
+		$result = mysql_query("SELECT * from participante where email='" . $email . "'");
 		if($row = mysql_fetch_array($result)){
 			if($row['password'] == $pass) {
-				session_start();
-				$_SESSION['usuario'] = $usuario;
-				header("Location: dashboard/user.html");
+				$_SESSION['email'] = $email;
+				$_SESSION['tipo'] = $tipo;
+				header("Location: dashboard/participante/user.html");
 			}else{
 				header("Location: index2.html");
 				exit();
@@ -82,14 +75,13 @@
 			exit();
 		}
 		break;
-
 		case 'E':
-		$result = mysql_query("SELECT * from participante where nombre='" . $usuario . "'");
+		$result = mysql_query("SELECT * from participante where email='" . $email . "'");
 		if($row = mysql_fetch_array($result)){
 			if($row['password'] == $pass) {
-				session_start();
-				$_SESSION['usuario'] = $usuario;
-				header("Location: dashboard/user.html");
+				$_SESSION['email'] = $email;
+				$_SESSION['tipo'] = $tipo;
+				header("Location: dashboard/participante/user.html");
 			}else{
 				header("Location: index2.html");
 				exit();
