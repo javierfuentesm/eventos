@@ -33,23 +33,7 @@ include("conexion.php");
                 </li>
 
                 <li>
-<<<<<<< HEAD
                     <a href="eventopage.html">
-=======
-                    <a href="table.html">
-                        <i class="pe-7s-note2"></i>
-                        <p>Usuarios</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="icons.html">
-                        <i class="pe-7s-science"></i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="maps.html">
->>>>>>> origin/master
                         <i class="pe-7s-map-marker"></i>
                         <p>Eventos</p>
                     </a>
@@ -73,18 +57,8 @@ include("conexion.php");
                     <ul class="nav navbar-nav navbar-right">
 
                         <li>
-<<<<<<< HEAD
                             <a href="cerrar_sesion.php">
                                 Cerrar sesión
-=======
-                           <a href="">
-                               Cuenta
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Cerrar Sesion
->>>>>>> origin/master
                             </a>
                         </li>
                     </ul>
